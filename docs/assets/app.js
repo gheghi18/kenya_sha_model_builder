@@ -521,7 +521,11 @@
         ans.append(pair);
       } else {
         const inp = el("input", { type: "number", min: 0, max: v.key === "x_age_household_head" ? 110 : 20, step: 1, value: h[v.key], "aria-label": v.label });
-        inp.addEventListener("input", () => { const n = parseFloat(inp.value); if (isFinite(n)) { h[v.key] = n; updateHH(); } });
+        // Wait until typing pauses (or the box loses focus): typing "45" would otherwise briefly count as age 4
+        let t;
+        const apply = () => { clearTimeout(t); const n = parseFloat(inp.value); if (isFinite(n)) { h[v.key] = Math.min(+inp.max, Math.max(0, n)); updateHH(); } };
+        inp.addEventListener("input", () => { clearTimeout(t); t = setTimeout(apply, 600); });
+        inp.addEventListener("change", apply);
         ans.append(inp);
       }
       tr.append(ans, el("td", { class: "eff" }));
@@ -558,14 +562,12 @@
     const h = hh.cur, s = hh.start;
     const r = predictHousehold(h);
     const bill = r.total * PREMIUM_RATE;
-    const sha = predictHousehold(h, app.base).total * PREMIUM_RATE;
     const realOk = h.real && h.sector === s.sector && JSON.stringify(h.people) === JSON.stringify(s.people);
     const real = realOk ? toHouseholdKes(h.real.actualPerAdq, r.adq, r.defl) * PREMIUM_RATE : null;
     const changed = JSON.stringify([h.cat, h.bin, h.nr_rooms, h.x_age_household_head]) !== JSON.stringify([s.cat, s.bin, s.nr_rooms, s.x_age_household_head]);
     $("#hh-bills").innerHTML = `
       <div class="bill main"><span>Your model's bill</span><b>${kes(bill)}</b><small>a month</small></div>
-      ${real !== null ? `<div class="bill${changed ? " stale" : ""}"><span>What their bill should be</span><b>${kes(real)}</b>${changed ? "<small>For the real family. Your changes made a different household.</small>" : ""}</div>` : ""}
-      <div class="bill"><span>SHA's model</span><b>${kes(sha)}</b></div>`;
+      ${real !== null ? `<div class="bill${changed ? " stale" : ""}"><span>What their bill should be</span><b>${kes(real)}</b>${changed ? "<small>For the real family. Your changes made a different household.</small>" : ""}</div>` : ""}`;
 
     // Effect of each answer: how much higher the bill is than with a typical household's answer
     // Measured against a typical household's bill, so changing one answer only moves its own row
@@ -602,7 +604,7 @@
     document.querySelectorAll("#hh-table [data-derived]").forEach((sp) => { sp.textContent = derived[sp.dataset.derived]; });
     $("#hh-table-note").textContent = "Red answers push the bill up and blue ones pull it down, compared with a typical household.";
     const mini = $("#hh-mini");
-    mini.innerHTML = `<span>Your model's bill</span><b>${kes(bill)}</b><span class="mini-v">SHA ${kes(sha)}</span><span class="mini-go">↑</span>`;
+    mini.innerHTML = `<span>Your model's bill</span><b>${kes(bill)}</b><span class="mini-go">↑</span>`;
     if (!mini.dataset.bound) { mini.dataset.bound = "1"; mini.addEventListener("click", () => $("#hh-top").scrollIntoView({ behavior: "smooth", block: "start" })); }
   }
 
@@ -618,13 +620,11 @@
     $("#acc-controls").innerHTML = "";
     const c = classify(app.user.pred, { thr: "official", sector: app.opts.sector });
     const { dec, bucket } = deciles(c);
-    const sha = deciles(classify(app.basePred, { thr: "official", sector: app.opts.sector })).dec;
     const okAll = bucket.filter((b) => b === "ok").length / bucket.length;
-    const shaOk = (() => { const b = deciles(classify(app.basePred, { thr: "official", sector: app.opts.sector })).bucket; return b.filter((x) => x === "ok").length / b.length; })();
     $("#acc-stats").innerHTML = `
-      <div class="stat green"><div class="v">${pct(okAll)}</div><div class="k">of households guessed <strong>about right</strong><span class="sha-cmp">SHA's model: ${pct(shaOk)}</span></div></div>
-      <div class="stat red"><div class="v">${pct(dec[0].overP)}</div><div class="k">of the poorest 10% guessed <strong>too high</strong><span class="sha-cmp">SHA's model: ${pct(sha[0].overP)}</span></div></div>
-      <div class="stat blue"><div class="v">${pct(dec[9].underP)}</div><div class="k">of the richest 10% guessed <strong>too low</strong><span class="sha-cmp">SHA's model: ${pct(sha[9].underP)}</span></div></div>`;
+      <div class="stat green"><div class="v">${pct(okAll)}</div><div class="k">of households guessed <strong>about right</strong></div></div>
+      <div class="stat red"><div class="v">${pct(dec[0].overP)}</div><div class="k">of the poorest 10% guessed <strong>too high</strong></div></div>
+      <div class="stat blue"><div class="v">${pct(dec[9].underP)}</div><div class="k">of the richest 10% guessed <strong>too low</strong></div></div>`;
 
     const col = { over: C.accent, ok: C.ok, under: C.under };
     const traces = ["under", "ok", "over"].map((b) => {
@@ -707,8 +707,6 @@
   function renderExcluded() {
     amongControls("#exc-controls", renderExcluded);
     const { c, ks, over } = overSet(app.user.pred, app.opts);
-    const so = overSet(app.basePred, app.opts);
-    const shaShare = so.ks.reduce((t, k) => t + so.over[k], 0) / so.ks.length;
     let n = 0;
     const extra = [];
     for (const k of ks) if (over[k]) { n++; extra.push((c.prd[k] - c.act[k]) * c.mult[k] * PREMIUM_RATE); }
@@ -717,7 +715,6 @@
     $("#exc-dots-title").innerHTML = app.opts.among === 1
       ? `Out of 100${sectorText()} households, <span style="color:${C.accent}">${per100} pay too much</span>`
       : `Out of 100 ${who}, <span style="color:${C.accent}">${per100} pay too much</span>`;
-    $("#exc-dots-title").innerHTML += `<span class="sha-cmp">SHA's model: ${Math.round(shaShare * 100)}</span>`;
     $("#exc-dots").innerHTML = Array.from({ length: 100 }, (_, k) => `<i class="${k < per100 ? "miss" : ""}"></i>`).join("");
     const med = extra.length ? S.median(extra) : NaN;
     $("#exc-explain").innerHTML = extra.length
@@ -726,8 +723,7 @@
 
     // Drawer: the published poverty-line figure
     const m = confusion(classify(app.user.pred, { thr: "official", sector: app.opts.sector }));
-    const ms = confusion(classify(app.basePred, { thr: "official", sector: app.opts.sector }));
-    $("#exc-matrix").innerHTML = `<p>Using the official <span class="term" data-term="hhline">poverty line</span> instead, as in the published investigation: your model calls <strong>${pct(m.exclusion)}</strong> of poor${sectorText()} households "not poor" (${m.FN.toLocaleString()} of ${m.poor.toLocaleString()}). SHA's model: ${pct(ms.exclusion)}. This is the <span class="term" data-term="exclusion">exclusion error</span>.</p>
+    $("#exc-matrix").innerHTML = `<p>Using the official <span class="term" data-term="hhline">poverty line</span> instead, as in the published investigation: your model calls <strong>${pct(m.exclusion)}</strong> of poor${sectorText()} households "not poor" (${m.FN.toLocaleString()} of ${m.poor.toLocaleString()}). This is the <span class="term" data-term="exclusion">exclusion error</span>.</p>
       <p class="small muted">"Pays too much" means the model guesses the household's income more than 20% too high. "Poorest 10%/40%" is by real income, within urban or rural areas.</p>`;
   }
 
@@ -842,7 +838,6 @@
     $("#fair-controls").append(wrap);
 
     const { res, overall } = groupOver(app.user.pred, app.opts, fair.group);
-    const shaBy = Object.fromEntries(groupOver(app.basePred, app.opts, fair.group).res.map((r) => [r.cat, r]));
     const shown = res.filter((r) => r.enough);
     const label = groupLabel(fair.group);
     $("#fair-title").textContent = `${label}: share of ${amongText(app.opts.among)}households that pay too much`;
@@ -850,11 +845,9 @@
     const ys = shown.map((r) => r.cat);
     const h = Math.max(260, shown.length * (fair.group === "g_county" ? 36 : 56) + 70);
     plot("fair-chart", [
-      { type: "bar", orientation: "h", name: "Your model", y: ys, x: shown.map((r) => r.rate * 100), marker: { color: C.accent }, text: shown.map((r) => pct(r.rate)), textposition: "outside", cliponaxis: false, hovertemplate: "Your model, %{y}: %{x:.0f}% pay too much<extra></extra>" },
-      { type: "bar", orientation: "h", name: "SHA's model", y: ys, x: shown.map((r) => (shaBy[r.cat] ? shaBy[r.cat].rate * 100 : null)), marker: { color: C.light }, hovertemplate: "SHA's model, %{y}: %{x:.0f}% pay too much<extra></extra>" },
+      { type: "bar", orientation: "h", name: "Your model", y: ys, x: shown.map((r) => r.rate * 100), marker: { color: shown.map((r) => (r.rate > overall ? C.accent : C.grey)) }, text: shown.map((r) => pct(r.rate)), textposition: "outside", cliponaxis: false, hovertemplate: "Your model, %{y}: %{x:.0f}% pay too much<extra></extra>" },
     ], {
-      barmode: "group", showlegend: true, legend: { orientation: "h", y: 1.02, x: 0, yanchor: "bottom" },
-      height: h + 30, margin: { l: 10, r: 40, t: 30, b: 40 },
+      height: h, margin: { l: 10, r: 40, t: 10, b: 40 },
       yaxis: { autorange: "reversed", type: "category" }, xaxis: { ticksuffix: "%", range: [0, 100] },
       shapes: [{ type: "line", xref: "x", yref: "paper", x0: overall * 100, x1: overall * 100, y0: 0, y1: 1, line: { color: C.ink, dash: "dash", width: 1.5 } }],
     });
@@ -874,9 +867,9 @@
     const ex = Object.fromEntries(groupStats(cp, fair.group).res.map((r) => [r.cat, r]));
     const rows = res.map((r) => {
       const e = ex[r.cat];
-      return `<tr><td>${esc(r.cat)}</td><td class="num">${r.N}</td><td class="num">${r.enough ? pct(r.rate) : "–"}</td><td class="num">${r.enough ? pct(r.restRate) : "–"}</td><td class="num">${r.enough && shaBy[r.cat] ? pct(shaBy[r.cat].rate) : "–"}</td><td>${!r.enough ? '<span class="tag chance">Too few to tell</span>' : r.p < 0.05 ? '<span class="tag sig">Unlikely to be chance</span>' : '<span class="tag chance">Could be chance</span>'}</td><td class="num">${e && e.enough ? pct(e.exclusion) : "–"}</td></tr>`;
+      return `<tr><td>${esc(r.cat)}</td><td class="num">${r.N}</td><td class="num">${r.enough ? pct(r.rate) : "–"}</td><td class="num">${r.enough ? pct(r.restRate) : "–"}</td><td>${!r.enough ? '<span class="tag chance">Too few to tell</span>' : r.p < 0.05 ? '<span class="tag sig">Unlikely to be chance</span>' : '<span class="tag chance">Could be chance</span>'}</td><td class="num">${e && e.enough ? pct(e.exclusion) : "–"}</td></tr>`;
     }).join("");
-    $("#fair-table").innerHTML = `<table><thead><tr><th>Group</th><th class="num">Households</th><th class="num">Pay too much</th><th class="num">Everyone else</th><th class="num">SHA's model</th><th><span class="term" data-term="chance">Could be chance?</span></th><th class="num">Poor called "not poor" (poverty line)</th></tr></thead><tbody>${rows}</tbody></table>`;
+    $("#fair-table").innerHTML = `<table><thead><tr><th>Group</th><th class="num">Households</th><th class="num">Pay too much</th><th class="num">Everyone else</th><th><span class="term" data-term="chance">Could be chance?</span></th><th class="num">Poor called "not poor" (poverty line)</th></tr></thead><tbody>${rows}</tbody></table>`;
   }
 
   // -------------------------------------------------------- 5. DRIVERS
