@@ -355,3 +355,44 @@ table.learned tr.vh td { border-top: 1px solid var(--line); padding-top: 8px; }
 @media (max-width: 860px) { #build-mini { display: flex; } }
 .mq .chip-x { background: transparent; border: 0; width: auto; height: auto; padding: 0 6px; font-size: 1rem; line-height: 1; cursor: pointer; }
 .mq .chip-x:hover { opacity: 1; }
+
+/* ---------- Meet a household: one table ---------- */
+.hh-top { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.hh-who h4 { margin: 14px 0 6px; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.field.inline { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.field.inline label { font-weight: 600; }
+.hh-bills { display: grid; gap: 10px; }
+.bill { background: var(--soft); border-radius: 10px; padding: 10px 14px; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.bill span { flex: 1 1 100%; font-size: .85rem; color: var(--muted); }
+.bill b { font-size: 1.3rem; }
+.bill.main { background: var(--ink); color: #fff; }
+.bill.main span, .bill.main small { color: #cfccc4; }
+.bill.main b { font-size: 2rem; font-family: var(--serif); }
+table.hh-table { width: 100%; border-collapse: collapse; }
+.hh-table th { text-align: left; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); padding: 6px 8px; border-bottom: 1px solid var(--line); }
+.hh-table td { padding: 8px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.hh-table td.qname { font-weight: 600; width: 30%; }
+.hh-table td.a { width: 34%; }
+.hh-table td.a select, .hh-table td.a input[type=number] { width: 100%; max-width: 260px; }
+.hh-table td.a .check { padding: 0; }
+.hh-table .derived { color: var(--muted); font-size: .9rem; }
+.hh-table td.eff { display: flex; align-items: center; gap: 8px; min-width: 160px; }
+.effbar { flex: 1; height: 10px; background: #f0ede6; border-radius: 5px; overflow: hidden; }
+.effbar i { display: block; height: 100%; border-radius: 5px; transition: width .25s; }
+.effv { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; min-width: 74px; text-align: right; }
+@media (max-width: 760px) {
+  .hh-top { grid-template-columns: 1fr; }
+  .hh-bills { order: -1; }
+  .hh-table thead { display: none; }
+  .hh-table tr { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .hh-table td { border: 0; padding: 2px 0; width: auto !important; }
+  .hh-table td.eff { grid-column: 1 / -1; }
+}
+.hh-people { margin: 8px 0 0; font-size: 1.02rem; }
+.yn { display: flex; gap: 18px; }
+.yn .check input { accent-color: var(--ink); }
+.hh-btns { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+.hh-next { margin-top: 16px; }
+.hh-table .answer { font-weight: 500; }
+.bill.stale { opacity: .55; }
+.bill.stale small { flex-basis: 100%; font-size: .8rem; color: var(--muted); }

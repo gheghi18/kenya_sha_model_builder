@@ -382,13 +382,13 @@
         pick = (ok.length ? ok : pool).sort((a, b) => dist(a) - dist(b))[0];
       }
       const r = householdFromRow(pick);
-      r.label = { middle: "A typical household", random: "A random real household", missed: "A real poor household the model gets wrong", rich: "A real better-off household the model underestimates" }[kind];
+      r.label = { middle: "A typical household", random: "A real household from the survey", missed: "A real poor household the model gets wrong", rich: "A real better-off household the model underestimates" }[kind];
       Object.assign(h, r);
     }
     hh.cur = h;
     hh.start = JSON.parse(JSON.stringify(h));
-    renderHouseholdForm();
-    renderHouseholdResult();
+    hh.mode = "view";
+    renderHH();
   }
 
   // Model inputs derived from the member list, exactly as in prep_kchs_data.ipynb
@@ -442,25 +442,6 @@
     return { log: v, perAdq: Math.exp(v), adq, defl, total: toHouseholdKes(Math.exp(v), adq, defl), x };
   }
 
-  function contributions(h, x) {
-    const m = app.user.model[h.sector];
-    const means = app.D.means[h.sector];
-    const out = [];
-    for (const v of app.vars.filter((v) => app.user.sel.includes(v.key))) {
-      let c = 0;
-      for (const col of v.columns) {
-        const j = m.names.indexOf(col);
-        if (j >= 0) c += m.beta[j + 1] * ((x[col] || 0) - means[col]);
-      }
-      let label = v.label;
-      if (v.type === "categorical") label += ": " + h.cat[v.key];
-      if (v.type === "binary") label += h.bin[v.key] ? ": yes" : ": no";
-      if (v.key === "x_age_household_head" || v.key === "nr_rooms") label += ": " + h[v.key];
-      out.push({ label, c });
-    }
-    return out;
-  }
-
   function renderPeople(container, onChange) {
     const h = hh.cur;
     container.innerHTML = "";
@@ -488,267 +469,153 @@
     container.append(add);
   }
 
-  function renderHouseholdForm() {
-    const h = hh.cur, start = hh.start;
-    const form = $("#hh-form");
-    form.innerHTML = "";
-    const changed = (a, b) => (JSON.stringify(a) !== JSON.stringify(b) ? " changed" : "");
-    const onChange = () => { renderHouseholdResult(); };
-
-    const inModel = (k) => app.user.sel.includes(k);
-
-    // Where
-    const fsWhere = el("fieldset");
-    fsWhere.append(el("legend", {}, "Where the household lives"));
-    const g1 = el("div", { class: "field-grid" });
-    g1.append(fieldSelect("Urban or rural area?", [{ v: "Urban", l: "Urban" }, { v: "Rural", l: "Rural" }], h.sector, (v) => { h.sector = v; onChange(); }, changed(h.sector, start.sector)));
-    if (inModel("County")) {
-      const county = app.varByKey.County;
-      g1.append(fieldSelect(county.question, county.categories.map((c) => ({ v: c.label, l: c.label })).sort((a, b) => a.l.localeCompare(b.l)), h.cat.County, (v) => { h.cat.County = v; onChange(); }, changed(h.cat.County, start.cat.County)));
+  // One table: each question in your model, this household's answer, and what that answer does to the bill
+  function renderHH() {
+    const h = hh.cur;
+    hh.barMax = null;
+    const top = $("#hh-top");
+    top.innerHTML = "";
+    const left = el("div", { class: "hh-who" });
+    left.append(el("span", { class: "kicker" }, esc(h.label || "A household")));
+    left.append(el("p", { class: "hh-people" }, esc(peopleSummary(h))));
+    const editing = hh.mode === "edit";
+    const btns = el("div", { class: "hh-btns" });
+    if (!editing) {
+      const another = el("button", { type: "button", class: "btn" }, "Show me another household");
+      another.addEventListener("click", () => setPreset("random"));
+      btns.append(another);
+    } else {
+      const back = el("button", { type: "button", class: "btn" }, "← Back to the real household");
+      back.addEventListener("click", () => { hh.cur = clone(hh.start); hh.mode = "view"; renderHH(); });
+      btns.append(back);
     }
-    fsWhere.append(g1);
-    form.append(fsWhere);
+    left.append(btns);
+    top.append(left, el("div", { class: "hh-bills", id: "hh-bills" }));
 
-    // People (always: household size sets the bill)
-    const fsPeople = el("fieldset");
-    fsPeople.append(el("legend", {}, "Who lives here"));
-    const pbox = el("div");
-    fsPeople.append(pbox);
-    renderPeople(pbox, onChange);
-    form.append(fsPeople);
-
-    // Only the questions in your model, grouped by theme
-    hh.closed = hh.closed || new Set();
-    let asked = 0;
-    for (const t of THEME_ORDER.filter((t) => t !== "Where you live")) {
-      const vars = app.vars.filter((v) => v.group === t && inModel(v.key) && !PEOPLE_KEYS.has(v.key));
-      if (!vars.length) continue;
-      asked += vars.length;
-      const fs = el("details", { class: "fs" });
-      fs.open = !hh.closed.has(t);
-      fs.addEventListener("toggle", () => (fs.open ? hh.closed.delete(t) : hh.closed.add(t)));
-      fs.append(el("summary", {}, esc(THEME_LABEL[t] || t) + ` <span class="badge sec-badge" data-theme="${esc(t)}" hidden></span>`));
-      const grid = el("div", { class: "field-grid" });
-      const checks = el("div", { class: "checks" });
-      for (const v of vars) {
-        if (v.type === "categorical") {
-          grid.append(fieldSelect(v.question || v.label, v.categories.map((c) => ({ v: c.label, l: c.label })), h.cat[v.key], (val) => { h.cat[v.key] = val; onChange(); }, changed(h.cat[v.key], start.cat[v.key])));
-        } else if (v.type === "numeric") {
-          grid.append(fieldNumber(v.question || v.label, h[v.key], 0, v.key === "x_age_household_head" ? 110 : 20, 1, (val) => { h[v.key] = val; onChange(); }, changed(h[v.key], start[v.key])));
-        } else {
-          const lab = el("label", { class: "check" + changed(h.bin[v.key], start.bin[v.key]) });
-          const cb = el("input", { type: "checkbox" });
-          cb.checked = !!h.bin[v.key];
-          cb.addEventListener("change", () => { h.bin[v.key] = cb.checked ? 1 : 0; lab.classList.toggle("changed", h.bin[v.key] !== start.bin[v.key]); onChange(); });
-          lab.append(cb, document.createTextNode(v.label));
-          checks.append(lab);
+    // Table rows
+    const rows = app.user.sel.map((k) => app.varByKey[k]);
+    const tb = el("tbody");
+    for (const v of rows) {
+      const tr = el("tr", { "data-key": v.key });
+      tr.append(el("td", { class: "qname" }, esc(v.label)));
+      const ans = el("td", { class: "a" });
+      if (PEOPLE_KEYS.has(v.key)) ans.append(el("span", { class: "derived", "data-derived": v.key }));
+      else if (!editing) ans.append(el("span", { class: "answer" }, esc(v.type === "categorical" ? h.cat[v.key] : v.type === "binary" ? (h.bin[v.key] ? "Yes" : "No") : String(h[v.key]))));
+      else if (v.type === "categorical") {
+        const s = el("select", { "aria-label": v.label });
+        v.categories.map((c) => c.label).sort((a, b) => (v.key === "County" ? a.localeCompare(b) : 0)).forEach((l) => { const o = el("option", { value: l }, esc(l)); if (h.cat[v.key] === l) o.selected = true; s.append(o); });
+        s.addEventListener("change", () => { h.cat[v.key] = s.value; updateHH(); });
+        ans.append(s);
+      } else if (v.type === "binary") {
+        // Two ticks, Yes and No, so either answer is a clear choice
+        const pair = el("div", { class: "yn", role: "radiogroup", "aria-label": v.label });
+        const name = "yn-" + v.key;
+        for (const [val, txt] of [[1, "Yes"], [0, "No"]]) {
+          const lab = el("label", { class: "check" });
+          const rb = el("input", { type: "radio", name, value: String(val) });
+          rb.checked = (h.bin[v.key] ? 1 : 0) === val;
+          rb.addEventListener("change", () => { if (rb.checked) { h.bin[v.key] = val; updateHH(); } });
+          lab.append(rb, document.createTextNode(txt));
+          pair.append(lab);
         }
+        ans.append(pair);
+      } else {
+        const inp = el("input", { type: "number", min: 0, max: v.key === "x_age_household_head" ? 110 : 20, step: 1, value: h[v.key], "aria-label": v.label });
+        inp.addEventListener("input", () => { const n = parseFloat(inp.value); if (isFinite(n)) { h[v.key] = n; updateHH(); } });
+        ans.append(inp);
       }
-      if (grid.children.length) fs.append(grid);
-      if (checks.children.length) {
-        if (grid.children.length) checks.style.marginTop = "10px";
-        fs.append(checks);
-      }
-      form.append(fs);
+      tr.append(ans, el("td", { class: "eff" }));
+      tb.append(tr);
     }
-    if (!asked && !inModel("County")) form.append(el("p", { class: "small muted" }, "Your model only uses the list of people. Add more questions in step 1."));
-  }
-
-  function fieldSelect(label, options, value, onChange, extraClass = "") {
-    const f = el("div", { class: "field" + extraClass });
-    const id = "f-" + Math.random().toString(36).slice(2);
-    f.append(el("label", { for: id }, esc(label)));
-    const s = el("select", { id });
-    options.forEach((o) => {
-      const op = el("option", { value: o.v }, esc(o.l));
-      if (o.v === value) op.selected = true;
-      s.append(op);
-    });
-    s.addEventListener("change", () => {
-      onChange(s.value);
-      f.classList.toggle("changed", true);
-    });
-    f.append(s);
-    return f;
-  }
-
-  function fieldNumber(label, value, min, max, step, onChange, extraClass = "") {
-    const f = el("div", { class: "field" + extraClass });
-    const id = "f-" + Math.random().toString(36).slice(2);
-    f.append(el("label", { for: id }, esc(label)));
-    const inp = el("input", { id, type: "number", min, max, step, value });
-    inp.addEventListener("input", () => {
-      const v = parseFloat(inp.value);
-      if (!isFinite(v)) return;
-      onChange(Math.min(max, Math.max(min, v)));
-      f.classList.toggle("changed", true);
-    });
-    f.append(inp);
-    return f;
-  }
-
-  const clone = (o) => JSON.parse(JSON.stringify(o));
-  const premiumOf = (h) => predictHousehold(h).total * PREMIUM_RATE;
-
-  // Every difference between the current household and where you started,
-  // with how much that single change moves the monthly premium.
-  function householdChanges(h, s) {
-    const out = [];
-    const add = (label, revert) => {
-      const without = clone(h);
-      revert(without);
-      out.push({ label, revert, effect: premiumOf(h) - premiumOf(without) });
-    };
-    if (h.sector !== s.sector) add(`Area: ${s.sector} → ${h.sector}`, (x) => { x.sector = s.sector; });
-    if (JSON.stringify(h.people) !== JSON.stringify(s.people)) {
-      const a = s.people.length, b = h.people.length;
-      add(a === b ? "Household members changed" : `People: ${a} → ${b}`, (x) => { x.people = clone(s.people); });
+    const table = el("table", { class: "hh-table" });
+    table.append(el("thead", {}, `<tr><th>Question</th><th>This household's answer</th><th>What it does to the bill</th></tr>`), tb);
+    const box = $("#hh-table");
+    box.innerHTML = "";
+    box.append(el("p", { class: "small muted", id: "hh-table-note" }), table);
+    if (!editing) {
+      const go = el("button", { type: "button", class: "btn primary" }, "Now try changing their answers →");
+      go.addEventListener("click", () => { hh.mode = "edit"; renderHH(); $("#hh-table").scrollIntoView({ behavior: "smooth", block: "start" }); });
+      box.append(el("div", { class: "hh-next" }, ""));
+      box.lastChild.append(go);
     }
-    for (const v of app.vars) {
-      if (v.type === "categorical" && h.cat[v.key] !== s.cat[v.key]) {
-        add(`${v.label}: ${s.cat[v.key]} → ${h.cat[v.key]}`, (x) => { x.cat[v.key] = s.cat[v.key]; });
-      } else if (v.type === "binary" && !!h.bin[v.key] !== !!s.bin[v.key]) {
-        add(`${v.label}: ${s.bin[v.key] ? "yes" : "no"} → ${h.bin[v.key] ? "yes" : "no"}`, (x) => { x.bin[v.key] = s.bin[v.key]; });
-      } else if (v.type === "numeric" && v.key in h && h[v.key] !== s[v.key]) {
-        add(`${v.label}: ${s[v.key]} → ${h[v.key]}`, (x) => { x[v.key] = s[v.key]; });
-      }
-    }
-    return out;
+    $("#hh-lede").textContent = editing
+      ? "Change any answer and watch the bill. This is now a made-up household."
+      : "Here is a real family from the survey. Is your model's bill close to what it should be?";
+    updateHH();
   }
 
-  // A single shilling scale: poor zone, poverty line and up to three dots
-  function numberLine(marks, line) {
-    const W = 340, x0 = 12, x1 = W - 12;
-    const max = Math.max(line, ...marks.map((m) => m.v)) * 1.15;
-    const X = (v) => x0 + (v / max) * (x1 - x0);
-    const sorted = marks.slice().sort((a, b) => a.v - b.v);
-    let svg = `<svg viewBox="0 0 ${W} 92" width="100%" role="img" aria-label="Monthly premium on a shilling scale">
-      <rect x="${x0}" y="46" width="${X(line) - x0}" height="10" rx="2" fill="${C.ok}" opacity=".18"/>
-      <line x1="${x0}" y1="51" x2="${x1}" y2="51" stroke="${C.grey}" stroke-width="1"/>
-      <line x1="${X(line)}" y1="40" x2="${X(line)}" y2="62" stroke="${C.ink}" stroke-width="1.5"/>
-      <text x="${X(line)}" y="78" font-size="11" text-anchor="middle" fill="${C.muted}">Poverty line ${kes(line)}</text>
-      <text x="${x0}" y="78" font-size="11" fill="${C.ok}" text-anchor="start" ${X(line) - x0 < 120 ? 'opacity="0"' : ""}>Poor</text>`;
-    sorted.forEach((m, k) => {
-      const y = k % 2 === 0 ? 30 : 14;
-      const x = X(m.v);
-      const anchor = x < 60 ? "start" : x > W - 60 ? "end" : "middle";
-      svg += `<line x1="${x}" y1="${y + 3}" x2="${x}" y2="51" stroke="${m.color}" stroke-width="1" opacity=".5"/>
-        <circle cx="${x}" cy="51" r="${m.big ? 7 : 6}" fill="${m.color}" stroke="#fff" stroke-width="1.5"/>
-        <text x="${x}" y="${y}" font-size="11.5" font-weight="${m.big ? 600 : 400}" text-anchor="${anchor}" fill="${C.ink}">${esc(m.label)}</text>`;
-    });
-    const legend = marks.map((m) => `<span><i class="dot" style="background:${m.color}"></i>${esc(m.label)} <b>${kes(m.v)}</b></span>`).join("");
-    return svg + `</svg><div class="legend numlegend">${legend}</div>`;
+  // "4 people: a man (32), a woman (26) and two boys (8 and 4) · rural"
+  function peopleSummary(h) {
+    const word = (p) => (p.age < 18 ? (p.sex === "M" ? "boy" : "girl") : p.sex === "M" ? "man" : "woman");
+    const parts = h.people.map((p) => `${word(p)}${Number.isFinite(p.age) ? " (" + p.age + ")" : ""}`);
+    const n = h.people.length;
+    return `${n} ${n === 1 ? "person" : "people"}: ${parts.join(", ")}`;
   }
 
-  function renderHouseholdResult() {
+  // Recompute the bills and every row's bar without rebuilding the inputs
+  function updateHH() {
+    if (!app.user.model || !hh.cur) return;
     const h = hh.cur, s = hh.start;
     const r = predictHousehold(h);
-    const r0 = predictHousehold(s);
-    const prem = r.total * PREMIUM_RATE, prem0 = r0.total * PREMIUM_RATE;
-    const lineSpend = toHouseholdKes(app.meta.poverty_line[h.sector], r.adq, r.defl);
-    const linePrem = lineSpend * PREMIUM_RATE;
-    const predPoor = r.total <= lineSpend;
-    const changes = householdChanges(h, s);
-    const realOk = h.real && JSON.stringify(h.people) === JSON.stringify(s.people);
-    const actual = realOk ? toHouseholdKes(h.real.actualPerAdq, r.adq, r.defl) : null;
-    const box = $("#hh-result");
+    const bill = r.total * PREMIUM_RATE;
+    const sha = predictHousehold(h, app.base).total * PREMIUM_RATE;
+    const realOk = h.real && h.sector === s.sector && JSON.stringify(h.people) === JSON.stringify(s.people);
+    const real = realOk ? toHouseholdKes(h.real.actualPerAdq, r.adq, r.defl) * PREMIUM_RATE : null;
+    const changed = JSON.stringify([h.cat, h.bin, h.nr_rooms, h.x_age_household_head]) !== JSON.stringify([s.cat, s.bin, s.nr_rooms, s.x_age_household_head]);
+    $("#hh-bills").innerHTML = `
+      <div class="bill main"><span>Your model's bill</span><b>${kes(bill)}</b><small>a month</small></div>
+      ${real !== null ? `<div class="bill${changed ? " stale" : ""}"><span>What their bill should be</span><b>${kes(real)}</b>${changed ? "<small>For the real family. Your changes made a different household.</small>" : ""}</div>` : ""}
+      <div class="bill"><span>SHA's model</span><b>${kes(sha)}</b></div>`;
 
-    // Headline: premium before -> after
-    const d = prem - prem0;
-    let html = `<span class="kicker">${esc(h.label || "Your household")}</span>
-      <div class="small muted" style="margin-top:6px">Monthly bill from your model</div>`;
-    html += changes.length
-      ? `<div class="headline"><span class="was">${kes(prem0)}</span><span class="arrow">→</span><span class="now">${kes(prem)}</span><span class="dlt" style="color:${d > 0 ? C.accent : C.under}">${d > 0 ? "+" : "−"}${kes(Math.abs(d))}</span></div>`
-      : `<div class="headline"><span class="now">${kes(prem)}</span></div>`;
-    html += `<div class="verdict ${predPoor ? "poor" : "notpoor"}">Your model says: ${predPoor ? "poor" : "not poor"}</div>`;
-    html += `<div class="sha-cmp">SHA's model would charge ${kes(predictHousehold(h, app.base).total * PREMIUM_RATE)}</div>`;
-
-    // Number line
-    const marks = [];
-    if (actual) marks.push({ label: "Real", v: actual * PREMIUM_RATE, color: C.ok });
-    if (changes.length) marks.push({ label: "Before", v: prem0, color: C.grey });
-    marks.push({ label: changes.length ? "Now" : "Yours", v: prem, color: C.accent, big: true });
-    html += `<div class="numline">${numberLine(marks, linePrem)}</div>`;
-
-    // One sentence
-    let say = "";
-    if (actual && !changes.length) {
-      const extra = prem - actual * PREMIUM_RATE;
-      const actPoor = actual <= lineSpend;
-      if (actPoor && !predPoor) say = `Really poor, but the model says not. Overcharged by ${kes(extra)} a month.`;
-      else if (!actPoor && predPoor) say = `Not poor, but the model thinks it is.`;
-      else say = `${kes(Math.abs(extra))} a month too ${extra > 0 ? "high" : "low"}.`;
+    // Effect of each answer: how much higher the bill is than with a typical household's answer
+    // Measured against a typical household's bill, so changing one answer only moves its own row
+    const m = app.user.model[h.sector], means = app.D.means[h.sector], x = r.x;
+    let logTyp = m.beta[0];
+    m.names.forEach((nm, j) => { logTyp += m.beta[j + 1] * means[nm]; });
+    const typBill = toHouseholdKes(Math.exp(logTyp), r.adq, r.defl) * PREMIUM_RATE;
+    const effects = {};
+    for (const k of app.user.sel) {
+      const v = app.varByKey[k];
+      let c = 0;
+      for (const col of v.columns) { const j = m.names.indexOf(col); if (j >= 0) c += m.beta[j + 1] * ((x[col] || 0) - means[col]); }
+      effects[k] = typBill * (Math.exp(c) - 1);
     }
-    if (changes.length) {
-      const crossed = (r0.total <= toHouseholdKes(app.meta.poverty_line[s.sector], r0.adq, r0.defl)) !== predPoor;
-      say = crossed ? `Now: <strong>${predPoor ? "poor" : "not poor"}</strong>.` : "";
-    } else if (!actual) say = "Change any answer.";
-    if (say.trim()) html += `<p class="say">${say.trim()}</p>`;
-
-    // Change chips
-    if (changes.length) {
-      html += `<div class="chips-head"><span class="small muted">You changed</span><button type="button" class="linkbtn" id="hh-undo-all">Undo all</button></div><div class="chips">` +
-        changes.map((c, k) => `<span class="chip">${esc(c.label)} <b style="color:${c.effect > 0.5 ? C.accent : c.effect < -0.5 ? C.under : C.muted}">${Math.abs(c.effect) < 0.5 ? "±KES 0" : (c.effect > 0 ? "+" : "−") + kes(Math.abs(c.effect))}</b><button type="button" class="chip-x" data-k="${k}" aria-label="Undo ${esc(c.label)}">×</button></span>`).join("") +
-        `</div>`;
-    }
-
-    // Details drawer
-    html += `<details class="drawer" id="hh-details"${hh.detailsOpen ? " open" : ""}><summary>More detail</summary>
-      <div class="compare-line"><span>Model's guess of monthly income</span><b>${kes(r.total)}</b></div>
-      ${actual ? `<div class="compare-line"><span>Real monthly income</span><b>${kes(actual)}</b></div>` : ""}
-      <div class="compare-line"><span>Poverty line for this household (<span class="term" data-term="hhline">?</span>)</span><b>${kes(lineSpend)}</b></div>
-      <p class="small muted">2024 prices (<span class="term" data-term="prices">how?</span>). Bill = 2.75% of income. What pushes the guess up or down:</p>
-      <div id="hh-contrib" class="chart" style="min-height:300px"></div></details>`;
-    box.innerHTML = html;
-
-    // Compact result bar pinned to the bottom of small screens
-    const mini = $("#hh-mini");
-    mini.innerHTML = `<span>Premium</span>${changes.length ? `<s>${kes(prem0)}</s> → ` : ""}<b>${kes(prem)}</b>${changes.length ? ` <em style="color:${d > 0 ? "#ffb4a6" : "#a9c8ee"}">${d > 0 ? "+" : "−"}${kes(Math.abs(d))}</em>` : ""}<span class="mini-v">${predPoor ? "poor" : "not poor"}</span><span class="mini-go">↓</span>`;
-    if (!mini.dataset.bound) {
-      mini.dataset.bound = "1";
-      mini.addEventListener("click", () => $("#hh-result").scrollIntoView({ behavior: "smooth", block: "start" }));
-    }
-
-    // Show how many answers changed in each collapsed section
-    document.querySelectorAll(".sec-badge").forEach((b) => {
-      const vars = app.vars.filter((v) => v.group === b.dataset.theme);
-      const n = vars.filter((v) => (v.type === "categorical" ? h.cat[v.key] !== s.cat[v.key] : v.type === "binary" ? !!h.bin[v.key] !== !!s.bin[v.key] : h[v.key] !== s[v.key])).length;
-      b.hidden = !n;
-      b.textContent = n + " changed";
+    // Bar scale is fixed when the table is drawn, so one change never resizes the other bars
+    if (!hh.barMax) hh.barMax = Math.max(1, ...Object.values(effects).map(Math.abs));
+    const maxAbs = hh.barMax;
+    document.querySelectorAll("#hh-table tr[data-key]").forEach((tr) => {
+      const e = effects[tr.dataset.key];
+      const w = Math.min(100, Math.round((Math.abs(e) / maxAbs) * 100));
+      const col = e > 0 ? C.accent : C.under;
+      tr.querySelector(".eff").innerHTML = Math.abs(e) < 0.5
+        ? `<span class="effv muted">±KES 0</span>`
+        : `<span class="effbar"><i style="width:${w}%;background:${col}"></i></span><span class="effv" style="color:${col}">${e > 0 ? "+" : "−"}${kes(Math.abs(e))}</span>`;
     });
-    box.querySelectorAll(".chip-x").forEach((b) => b.addEventListener("click", () => {
-      changes[+b.dataset.k].revert(hh.cur);
-      renderHouseholdForm();
-      renderHouseholdResult();
-    }));
-    const undo = $("#hh-undo-all");
-    if (undo) undo.addEventListener("click", () => { hh.cur = clone(hh.start); renderHouseholdForm(); renderHouseholdResult(); });
-    const det = $("#hh-details");
-    const drawContrib = () => {
-      const contrib = contributions(h, r.x).sort((a, b) => Math.abs(b.c) - Math.abs(a.c)).slice(0, 10).reverse();
-      plot("hh-contrib", [{
-        type: "bar", orientation: "h",
-        y: contrib.map((q) => q.label), x: contrib.map((q) => (Math.exp(q.c) - 1) * 100),
-        marker: { color: contrib.map((q) => (q.c > 0 ? C.accent : C.under)) },
-        hovertemplate: "%{y}<br>%{x:+.0f}% on the estimate<extra></extra>",
-      }], {
-        margin: { l: 10, r: 10, t: 0, b: 40 }, height: 320,
-        xaxis: { ticksuffix: "%", zeroline: true, zerolinecolor: C.ink, title: { text: "Effect on the estimate", font: { size: 11 } } },
-        yaxis: { automargin: true, tickfont: { size: 11 } },
-      });
+    // Answers worked out from the people list
+    const ppl = h.people, n = ppl.length;
+    const derived = {
+      household_size: `${n} ${n === 1 ? "person" : "people"}`,
+      mm_age: `Ages add up to ${Math.round(ppl.reduce((t, p) => t + (Number.isFinite(p.age) ? p.age : 0), 0))}`,
+      prop_over65: pct(x.prop_over65), prop_under5: pct(x.prop_under5), prop_m1864: pct(x.prop_m1864), prop_w1864: pct(x.prop_w1864),
+      x_num_children: String(x.x_num_children),
     };
-    det.addEventListener("toggle", () => { hh.detailsOpen = det.open; if (det.open) drawContrib(); });
-    if (det.open) drawContrib();
+    document.querySelectorAll("#hh-table [data-derived]").forEach((sp) => { sp.textContent = derived[sp.dataset.derived]; });
+    $("#hh-table-note").textContent = "Red answers push the bill up and blue ones pull it down, compared with a typical household.";
+    const mini = $("#hh-mini");
+    mini.innerHTML = `<span>Your model's bill</span><b>${kes(bill)}</b><span class="mini-v">SHA ${kes(sha)}</span><span class="mini-go">↑</span>`;
+    if (!mini.dataset.bound) { mini.dataset.bound = "1"; mini.addEventListener("click", () => $("#hh-top").scrollIntoView({ behavior: "smooth", block: "start" })); }
   }
 
   function renderHousehold() {
     if (!hh.cur) setPreset("middle");
-    else renderHouseholdResult();
+    else renderHH();
   }
+
+  const clone = (o) => JSON.parse(JSON.stringify(o));
 
   // ------------------------------------------------------- 2. ACCURACY
   function renderAccuracy() {
-    standardControls("#acc-controls", renderAccuracy, { thr: false });
+    $("#acc-controls").innerHTML = "";
     const c = classify(app.user.pred, { thr: "official", sector: app.opts.sector });
     const { dec, bucket } = deciles(c);
     const sha = deciles(classify(app.basePred, { thr: "official", sector: app.opts.sector })).dec;
@@ -834,7 +701,6 @@
     const box = $(id);
     box.innerHTML = "";
     seg(box, "Look at", everyone ? AMONG_OPTS : AMONG_OPTS.filter((o) => o.v !== 1), app.opts.among, (v) => { app.opts.among = v; rerender(); });
-    seg(box, "Area", SECTOR_OPTS, app.opts.sector, (v) => { app.opts.sector = v; rerender(); });
   }
 
   // ------------------------------------------------ 3. WHO PAYS TOO MUCH
@@ -1161,7 +1027,6 @@
     pal.addEventListener("dragover", (e) => e.preventDefault());
     pal.addEventListener("drop", (e) => { e.preventDefault(); const k = e.dataTransfer.getData("text/plain"); if (app.user.sel.includes(k)) removeQ(k); });
     $("#model-clear").addEventListener("click", () => setSelection([]));
-    $("#learned").addEventListener("toggle", () => { if ($("#learned").open) renderLearned(); });
     $("#build-mini").addEventListener("click", () => $(".model-box").scrollIntoView({ behavior: "smooth", block: "start" }));
     app.buildReady = true;
   }
@@ -1205,37 +1070,8 @@
     $("#build-mini").innerHTML = n
       ? `<span>Your model</span><b>${n} / ${MAX_Q}</b><span class="mini-go">↑</span>`
       : `<span>Your model</span><b>empty</b><span class="mini-go">↑</span>`;
-    if ($("#learned").open) renderLearned();
   }
 
-  // What each chosen question does to the guess, in plain percentages
-  function renderLearned() {
-    const U = app.user, box = $("#learned-body");
-    if (!U.model) { box.innerHTML = '<p class="small muted">Add questions first.</p>'; return; }
-    const eff = (s, col) => { const t = U.fits[s].test(col); return t ? Math.exp(t.coef) - 1 : null; };
-    const cell = (v) => (v === null ? "–" : `<span style="color:${v > 0 ? C.accent : C.under}">${signedPct(v)}</span>`);
-    const rows = [];
-    for (const k of U.sel) {
-      const v = app.varByKey[k];
-      if (v.type === "categorical") {
-        const cats = v.categories.filter((c) => c.column).map((c) => ({ l: c.label, u: eff("Urban", c.column), r: eff("Rural", c.column) }))
-          .filter((c) => c.u !== null || c.r !== null)
-          .sort((a, b) => ((b.u ?? b.r) + (b.r ?? b.u)) - ((a.u ?? a.r) + (a.r ?? a.u)));
-        const show = cats.length > 4 ? [cats[0], cats[1], cats[cats.length - 2], cats[cats.length - 1]] : cats;
-        rows.push(`<tr class="vh"><td colspan="3"><strong>${esc(v.label)}</strong> <span class="small muted">compared with ${esc(v.reference || "the most common answer")}</span></td></tr>`);
-        show.forEach((c) => rows.push(`<tr><td class="sub">${esc(c.l)}</td><td class="num">${cell(c.u)}</td><td class="num">${cell(c.r)}</td></tr>`));
-      } else {
-        const col = v.columns[0];
-        const what = v.type === "binary" ? "if yes" : k.startsWith("prop") ? "from 0% to 100%" : k === "mm_age" ? "if the ages add up to twice as much" : k === "household_size" ? "for each extra person" : "for each extra one";
-        // mm_age is the log of summed ages, so report the effect of doubling it
-        const e2 = (s) => { const t = U.fits[s].test(col); return t ? Math.pow(2, t.coef) - 1 : null; };
-        const f = k === "mm_age" ? e2 : (s) => eff(s, col);
-        rows.push(`<tr><td><strong>${esc(v.label)}</strong> <span class="small muted">${what}</span></td><td class="num">${cell(f("Urban"))}</td><td class="num">${cell(f("Rural"))}</td></tr>`);
-      }
-    }
-    box.innerHTML = `<p class="small muted">How each answer moves your model's income guess, everything else the same.</p>
-      <div class="table-wrap"><table class="learned"><thead><tr><th></th><th class="num">Urban</th><th class="num">Rural</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>`;
-  }
 
   // ----------------------------------------------------------- glossary
   function initGlossary() {
