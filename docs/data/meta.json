@@ -1,0 +1,3986 @@
+{
+ "source": "KCHS 2021 (Kenya National Bureau of Statistics)",
+ "features": [
+  "household_size",
+  "mm_age",
+  "prop_over65",
+  "prop_under5",
+  "prop_m1864",
+  "prop_w1864",
+  "nr_rooms",
+  "county_bomet",
+  "county_bungoma",
+  "county_busia",
+  "county_elgeyo_marakwet",
+  "county_embu",
+  "county_garissa",
+  "county_homa_bay",
+  "county_isiolo",
+  "county_kajiado",
+  "county_kakamega",
+  "county_kericho",
+  "county_kiambu",
+  "county_kilifi",
+  "county_kirinyaga",
+  "county_kisii",
+  "county_kisumu",
+  "county_kitui",
+  "county_kwale",
+  "county_laikipia",
+  "county_lamu",
+  "county_machakos",
+  "county_makueni",
+  "county_mandera",
+  "county_marsabit",
+  "county_meru",
+  "county_migori",
+  "county_mombasa",
+  "county_muranga",
+  "county_nairobi",
+  "county_nakuru",
+  "county_nandi",
+  "county_narok",
+  "county_nyamira",
+  "county_nyandarua",
+  "county_nyeri",
+  "county_samburu",
+  "county_siaya",
+  "county_taita_taveta",
+  "county_tana_river",
+  "county_tharaka_nithi",
+  "county_trans_nzoia",
+  "county_turkana",
+  "county_uasin_gishu",
+  "county_vihiga",
+  "county_wajir",
+  "county_west_pokot",
+  "hhhead_woman_male",
+  "working_yes",
+  "marital_status_living_together",
+  "marital_status_married_monogamous",
+  "marital_status_married_polygamous",
+  "marital_status_never_married",
+  "marital_status_separated",
+  "marital_status_widow_or_widower",
+  "education_level_informal_education_madrasa_adult_basic",
+  "education_level_middle_level_college_certificate_diploma",
+  "education_level_none",
+  "education_level_pre_primary",
+  "education_level_primary",
+  "education_level_secondary_level",
+  "education_level_university_post_graduate",
+  "education_level_universityundergraduate",
+  "education_level_vocational",
+  "dwelling_flat",
+  "dwelling_landie",
+  "dwelling_maisonnette",
+  "dwelling_manyatta_traditional_house",
+  "dwelling_other_specify",
+  "dwelling_shanty",
+  "dwelling_swahili",
+  "ownership_dwelling_no_rent_with_consent_of_owner",
+  "ownership_dwelling_owns",
+  "ownership_dwelling_pays_rent_lease",
+  "roof_material_canvas_nylon_cartons_cardboard",
+  "roof_material_concrete_cement",
+  "roof_material_dung__mud",
+  "roof_material_grass__makuti_thatch_twigs",
+  "roof_material_iron_sheets_decra_versatile",
+  "roof_material_tiles",
+  "roof_material_tin_cans",
+  "wall_material_bricks",
+  "wall_material_cane_palm_trunks",
+  "wall_material_cement_blocks",
+  "wall_material_concrete_cement",
+  "wall_material_covered_adobe",
+  "wall_material_grass_reeds",
+  "wall_material_iron_sheets",
+  "wall_material_mud_cow_dung",
+  "wall_material_no_walls",
+  "wall_material_other",
+  "wall_material_plywood_cardboard",
+  "wall_material_precast_wall",
+  "wall_material_reused_wood",
+  "wall_material_stone_with_lime_cement",
+  "wall_material_stone_with_mud",
+  "wall_material_uncovered_adobe",
+  "wall_material_wood_planks_shingles_timber",
+  "floor_material_concrete_cement_terrazo",
+  "floor_material_dung",
+  "floor_material_earth_sand",
+  "floor_material_palm_bamboo",
+  "floor_material_parquet_or_polished_wood",
+  "floor_material_vinyl_or_asphalt_strips",
+  "floor_material_wall_to_wall_carpet",
+  "floor_material_wood_planks_shingles_timber",
+  "drinking_water_source_bottled_water",
+  "drinking_water_source_dam",
+  "drinking_water_source_lake",
+  "drinking_water_source_piped_to_yard_plot",
+  "drinking_water_source_piped_into_dwelling",
+  "drinking_water_source_pond",
+  "drinking_water_source_protected_spring",
+  "drinking_water_source_protected_well",
+  "drinking_water_source_public_tap_standpipe",
+  "drinking_water_source_rain_harvested_water",
+  "drinking_water_source_stream_river",
+  "drinking_water_source_unprotected_spring",
+  "drinking_water_source_unprotected_well",
+  "drinking_water_source_water_vendor",
+  "toilet_facility_flush_to_bio_septic_tank",
+  "toilet_facility_flush_to_cess_pool",
+  "toilet_facility_flush_to_main_sewer",
+  "toilet_facility_flush_to_septic_tank",
+  "toilet_facility_open",
+  "toilet_facility_pit_latrine_uncovered",
+  "toilet_facility_pit_latrine_covered",
+  "toilet_facility_vip_pit_latrin",
+  "cooking_fuel_source_charcoal",
+  "cooking_fuel_source_electricity",
+  "cooking_fuel_source_firewood_and_products_of_wood",
+  "cooking_fuel_source_lpg_gas",
+  "cooking_fuel_source_other_specify",
+  "cooking_fuel_source_paraffin",
+  "cooking_fuel_source_solar",
+  "lighting_source_candle",
+  "lighting_source_electricity",
+  "lighting_source_fuel_wood",
+  "lighting_source_gas_lamp",
+  "lighting_source_generator_diesel_petrol",
+  "lighting_source_paraffin_lantern",
+  "lighting_source_paraffin_pressure_lamp",
+  "lighting_source_paraffin_tin_lamp",
+  "lighting_source_solar",
+  "lighting_source_torch_spot_light_dry_cells",
+  "lighting_source_torch_spotlight_solar_charged",
+  "access_electricity_yes",
+  "own_radio_yes",
+  "owns_tv_yes",
+  "own_landline_yes",
+  "own_desktop_yes",
+  "own_laptop_yes",
+  "own_tablet_yes",
+  "own_fridge_yes",
+  "own_hometheatre_yes",
+  "own_phone_yes",
+  "own_mtcycle_yes",
+  "own_bicycle_yes",
+  "own_car_yes",
+  "owns_pickup_yes",
+  "d1_wage_yes",
+  "d1_own_account_yes",
+  "d1_own_frm_yes",
+  "occupation_casual_labour",
+  "occupation_farmer",
+  "occupation_housekeeper",
+  "occupation_housewife",
+  "occupation_other",
+  "occupation_private_sector_worker",
+  "occupation_public_sector_worker",
+  "occupation_retired"
+ ],
+ "model_vars": [
+  {
+   "key": "County",
+   "theme": "Where you live",
+   "label": "County",
+   "question": "Which county does the household live in?",
+   "type": "categorical",
+   "categories": [
+    {
+     "label": "Baringo",
+     "column": null
+    },
+    {
+     "label": "Bomet",
+     "column": "county_bomet"
+    },
+    {
+     "label": "Bungoma",
+     "column": "county_bungoma"
+    },
+    {
+     "label": "Busia",
+     "column": "county_busia"
+    },
+    {
+     "label": "Elgeyo Marakwet",
+     "column": "county_elgeyo_marakwet"
+    },
+    {
+     "label": "Embu",
+     "column": "county_embu"
+    },
+    {
+     "label": "Garissa",
+     "column": "county_garissa"
+    },
+    {
+     "label": "Homa Bay",
+     "column": "county_homa_bay"
+    },
+    {
+     "label": "Isiolo",
+     "column": "county_isiolo"
+    },
+    {
+     "label": "Kajiado",
+     "column": "county_kajiado"
+    },
+    {
+     "label": "Kakamega",
+     "column": "county_kakamega"
+    },
+    {
+     "label": "Kericho",
+     "column": "county_kericho"
+    },
+    {
+     "label": "Kiambu",
+     "column": "county_kiambu"
+    },
+    {
+     "label": "Kilifi",
+     "column": "county_kilifi"
+    },
+    {
+     "label": "Kirinyaga",
+     "column": "county_kirinyaga"
+    },
+    {
+     "label": "Kisii",
+     "column": "county_kisii"
+    },
+    {
+     "label": "Kisumu",
+     "column": "county_kisumu"
+    },
+    {
+     "label": "Kitui",
+     "column": "county_kitui"
+    },
+    {
+     "label": "Kwale",
+     "column": "county_kwale"
+    },
+    {
+     "label": "Laikipia",
+     "column": "county_laikipia"
+    },
+    {
+     "label": "Lamu",
+     "column": "county_lamu"
+    },
+    {
+     "label": "Machakos",
+     "column": "county_machakos"
+    },
+    {
+     "label": "Makueni",
+     "column": "county_makueni"
+    },
+    {
+     "label": "Mandera",
+     "column": "county_mandera"
+    },
+    {
+     "label": "Marsabit",
+     "column": "county_marsabit"
+    },
+    {
+     "label": "Meru",
+     "column": "county_meru"
+    },
+    {
+     "label": "Migori",
+     "column": "county_migori"
+    },
+    {
+     "label": "Mombasa",
+     "column": "county_mombasa"
+    },
+    {
+     "label": "Murang'a",
+     "column": "county_muranga"
+    },
+    {
+     "label": "Nairobi",
+     "column": "county_nairobi"
+    },
+    {
+     "label": "Nakuru",
+     "column": "county_nakuru"
+    },
+    {
+     "label": "Nandi",
+     "column": "county_nandi"
+    },
+    {
+     "label": "Narok",
+     "column": "county_narok"
+    },
+    {
+     "label": "Nyamira",
+     "column": "county_nyamira"
+    },
+    {
+     "label": "Nyandarua",
+     "column": "county_nyandarua"
+    },
+    {
+     "label": "Nyeri",
+     "column": "county_nyeri"
+    },
+    {
+     "label": "Samburu",
+     "column": "county_samburu"
+    },
+    {
+     "label": "Siaya",
+     "column": "county_siaya"
+    },
+    {
+     "label": "Taita Taveta",
+     "column": "county_taita_taveta"
+    },
+    {
+     "label": "Tana River",
+     "column": "county_tana_river"
+    },
+    {
+     "label": "Tharaka Nithi",
+     "column": "county_tharaka_nithi"
+    },
+    {
+     "label": "Trans Nzoia",
+     "column": "county_trans_nzoia"
+    },
+    {
+     "label": "Turkana",
+     "column": "county_turkana"
+    },
+    {
+     "label": "Uasin Gishu",
+     "column": "county_uasin_gishu"
+    },
+    {
+     "label": "Vihiga",
+     "column": "county_vihiga"
+    },
+    {
+     "label": "Wajir",
+     "column": "county_wajir"
+    },
+    {
+     "label": "West Pokot",
+     "column": "county_west_pokot"
+    }
+   ],
+   "reference": "Baringo",
+   "columns": [
+    "county_bomet",
+    "county_bungoma",
+    "county_busia",
+    "county_elgeyo_marakwet",
+    "county_embu",
+    "county_garissa",
+    "county_homa_bay",
+    "county_isiolo",
+    "county_kajiado",
+    "county_kakamega",
+    "county_kericho",
+    "county_kiambu",
+    "county_kilifi",
+    "county_kirinyaga",
+    "county_kisii",
+    "county_kisumu",
+    "county_kitui",
+    "county_kwale",
+    "county_laikipia",
+    "county_lamu",
+    "county_machakos",
+    "county_makueni",
+    "county_mandera",
+    "county_marsabit",
+    "county_meru",
+    "county_migori",
+    "county_mombasa",
+    "county_muranga",
+    "county_nairobi",
+    "county_nakuru",
+    "county_nandi",
+    "county_narok",
+    "county_nyamira",
+    "county_nyandarua",
+    "county_nyeri",
+    "county_samburu",
+    "county_siaya",
+    "county_taita_taveta",
+    "county_tana_river",
+    "county_tharaka_nithi",
+    "county_trans_nzoia",
+    "county_turkana",
+    "county_uasin_gishu",
+    "county_vihiga",
+    "county_wajir",
+    "county_west_pokot"
+   ]
+  },
+  {
+   "key": "household_size",
+   "theme": "Who lives here",
+   "label": "Household size",
+   "question": "How many people live in the household?",
+   "type": "numeric",
+   "col": "household_size",
+   "columns": [
+    "household_size"
+   ]
+  },
+  {
+   "key": "mm_age",
+   "theme": "Who lives here",
+   "label": "Ages of household members",
+   "question": "Combined age of everyone in the household (log of the sum of ages)",
+   "type": "numeric",
+   "col": "mm_age",
+   "columns": [
+    "mm_age"
+   ]
+  },
+  {
+   "key": "prop_over65",
+   "theme": "Who lives here",
+   "label": "Share of people aged 65+",
+   "question": "Share of household members aged 65 or older",
+   "type": "numeric",
+   "col": "prop_over65",
+   "columns": [
+    "prop_over65"
+   ]
+  },
+  {
+   "key": "prop_under5",
+   "theme": "Who lives here",
+   "label": "Share of young children (5 and under)",
+   "question": "Share of household members aged 5 or younger",
+   "type": "numeric",
+   "col": "prop_under5",
+   "columns": [
+    "prop_under5"
+   ]
+  },
+  {
+   "key": "prop_m1864",
+   "theme": "Who lives here",
+   "label": "Share of working-age men",
+   "question": "Share of household members who are men aged 18-64",
+   "type": "numeric",
+   "col": "prop_m1864",
+   "columns": [
+    "prop_m1864"
+   ]
+  },
+  {
+   "key": "prop_w1864",
+   "theme": "Who lives here",
+   "label": "Share of working-age women",
+   "question": "Share of household members who are women aged 18-64",
+   "type": "numeric",
+   "col": "prop_w1864",
+   "columns": [
+    "prop_w1864"
+   ]
+  },
+  {
+   "key": "hhhead_woman",
+   "theme": "Household head",
+   "label": "Sex of household head",
+   "question": "Is the household head a man or a woman?",
+   "type": "categorical",
+   "categories": [
+    {
+     "label": "Woman",
+     "column": null
+    },
+    {
+     "label": "Man",
+     "column": "hhhead_woman_male"
+    }
+   ],
+   "reference": "Woman",
+   "columns": [
+    "hhhead_woman_male"
+   ]
+  },
+  {
+   "key": "working",
+   "theme": "Household head",
+   "label": "Head worked last week",
+   "question": "Did the household head do any work last week?",
+   "type": "binary",
+   "col": "working_yes",
+   "columns": [
+    "working_yes"
+   ]
+  },
+  {
+   "key": "marital_status",
+   "theme": "Household head",
+   "label": "Marital status of head",
+   "question": "What is the household head's marital status?",
+   "type": "categorical",
+   "categories": [
+    {
+     "label": "Divorced",
+     "column": null
+    },
+    {
+     "label": "Living together",
+     "column": "marital_status_living_together"
+    },
+    {
+     "label": "Married monogamous",
+     "column": "marital_status_married_monogamous"
+    },
+    {
+     "label": "Married polygamous",
+     "column": "marital_status_married_polygamous"
+    },
+    {
+     "label": "Never married",
+     "column": "marital_status_never_married"
+    },
+    {
+     "label": "Separated",
+     "column": "marital_status_separated"
+    },
+    {
+     "label": "Widow or widower",
+     "column": "marital_status_widow_or_widower"
+    }
+   ],
+   "reference": "Divorced",
+   "columns": [
+    "marital_status_living_together",
+    "marital_status_married_monogamous",
+    "marital_status_married_polygamous",
+    "marital_status_never_married",
+    "marital_status_separated",
+    "marital_status_widow_or_widower"
+   ]
+  },
+  {
+   "key": "education_level",
+   "theme": "Household head",
+   "label": "Education of head",
+   "question": "What is the highest level of education the household head completed?",
+   "type": "categorical",
+   "categories": [
+    {
+     "label": "Never attended school",
+     "column": null
+    },
+    {
+     "label": "Informal (madrasa/adult basic)",
+     "column": "education_level_informal_education_madrasa_adult_basic"
+    },
+    {
+     "label": "College (certificate/diploma)",
+     "column": "education_level_middle_level_college_certificate_diploma"
+    },
+    {
+     "label": "Pre-primary",
+     "column": "education_level_pre_primary"
+    },
+    {
+     "label": "Primary",
+     "column": "education_level_primary"
+    },
+    {
+     "label": "Secondary",
+     "column": "education_level_secondary_level"
+    },
+    {
+     "label": "University (postgraduate)",
+     "column": "education_level_university_post_graduate"
+    },
+    {
+     "label": "University (undergraduate)",
+     "column": "education_level_universityundergraduate"
+    },
+    {
+     "label": "Vocational",
+     "column": "education_level_vocational"
+    },
+    {
+     "label": "Missing",
+     "column": "education_level_none"
+    }
+   ],
+   "reference": "Never attended school",
+   "columns": [
+    "education_level_informal_education_madrasa_adult_basic",
+    "education_level_middle_level_college_certificate_diploma",
+    "education_level_pre_primary",
+    "education_level_primary",
+    "education_level_secondary_level",
+    "education_level_university_post_graduate",
+    "education_level_universityundergraduate",
+    "education_level_vocational",
+    "education_level_none"
+   ]
+  },
+  {
+   "key": "occupation",
+   "theme": "Household head",
+   "label": "Occupation of head",
+   "question": "What kind of work does the household head mainly do?",
+   "type": "categorical",
+   "categories": [
+    {
+     "label": "Artisan/self-employed",
+     "column": null
+    },
+    {
+     "label": "Casual labour",
+     "column": "occupation_casual_labour"
+    },
+    {
+     "label": "Farmer",
+     "column": "occupation_farmer"
+    },
+    {
+     "label": "Housekeeper",
+     "column": "occupation_housekeeper"
+    },
+    {
+     "label": "Housewife",
+     "column": "occupation_housewife"
+    },
+    {
+     "label": "Other",
+     "column": "occupation_other"
+    },
+    {
+     "label": "Private sector worker",
+     "column": "occupation_private_sector_worker"
+    },
+    {
+     "label": "Public sector worker",
+     "column": "occupation_public_sector_worker"
+    },
+    {
+     "label": "Retired",
+     "column": "occupation_retired"
+    }
+   ],
+   "reference": "Artisan/self-employed",
+   "columns": [
+    "occupation_casual_labour",
+    "occupation_farmer",
+    "occupation_housekeeper",
+    "occupation_housewife",
+    "occupation_other",
+    "occupation_private_sector_worker",
+    "occupation_public_sector_worker",
+    "occupation_retired"
+   ]
+  },
+  {
+   "key": "d01_wage",
+   "theme": "Household head",
+   "label": "Head is a paid employee",
+   "question": "Is the household head a paid employee?",
+   "type": "binary",
+   "col": "d1_wage_yes",
+   "columns": [
+    "d1_wage_yes"
+   ]
+  },
+  {
+   "key": "d01_own_account",
+   "theme": "Household head",
+   "label": "Head works for themself",
+   "question": "Does the household head run their own business (own-account worker)?",
+   "type": "binary",
+   "col": "d1_own_account_yes",
+   "columns": [
+    "d1_own_account_yes"
+   ]
+  },
+  {
+   "key": "d01_own_frm",
+   "theme": "Household head",
+   "label": "Head farms own land",
+   "question": "Is the household head self-employed in small-scale farming?",
+   "type": "binary",
+   "col": "d1_own_frm_yes",
+   "columns": [
+    "d1_own_frm_yes"
+   ]
+  },
+  {
+   "key": "dwelling",
+   "theme": "The home",
+   "label": "Type of house",
+   "question": "What type of house does the household live in?",
+   "type": "categorical",
+   "categories": [
+    {
+     "label": "Bungalow",
+     "column": null
+    },
+    {
+     "label": "Flat",
+     "column": "dwelling_flat"
+    },
+    {
+     "label": "Landie (row of rooms)",
+     "column": "dwelling_landie"
+    },
+    {
+     "label": "Maisonnette",
+     "column": "dwelling_maisonnette"
+    },
+    {
+     "label": "Manyatta/traditional house",
+     "column": "dwelling_manyatta_traditional_house"
+    },
+    {
+     "label": "Other",
+     "column": "dwelling_other_specify"
+    },
+    {
+     "label": "Shanty",
+     "column": "dwelling_shanty"
+    },
+    {
+     "label": "Swahili",
+     "column": "dwelling_swahili"
+    }
+   ],
+   "reference": "Bungalow",
+   "columns": [
+    "dwelling_flat",
+    "dwelling_landie",
+    "dwelling_maisonnette",
+    "dwelling_manyatta_traditional_house",
+    "dwelling_other_specify",
+    "dwelling_shanty",
+    "dwelling_swahili"
+   ]
+  },
+  {
+   "key": "nr_rooms",
+   "theme": "The home",
+   "label": "Number of sleeping rooms",
+   "question": "How many rooms are used for sleeping?",
+   "type": "numeric",
+   "col": "nr_rooms",
+   "columns": [
+    "nr_rooms"
+   ]
+  },
+  {
+   "key": "ownership_dwelling",
+   "theme": "The home",
+   "label": "Own or rent the home",
+   "question": "Does the household own or rent the home?",
+   "type": "categorical",
+   "categories": [
+    {
+     "label": "No rent, squatting",
+     "column": null
+    },
+    {
+     "label": "No rent, with consent of owner",
+     "column": "ownership_dwelling_no_rent_with_consent_of_owner"
+    },
+    {
+     "label": "Owns",
+     "column": "ownership_dwelling_owns"
+    },
+    {
+     "label": "Pays rent/lease",
+     "column": "ownership_dwelling_pays_rent_lease"
+    }
+   ],
+   "reference": "No rent, squatting",
+   "columns": [
+    "ownership_dwelling_no_rent_with_consent_of_owner",
+    "ownership_dwelling_owns",
+    "ownership_dwelling_pays_rent_lease"
+   ]
+  },
+  {
+   "key": "roof_material",
+   "theme": "The home",
+   "label": "Roof material",
+   "question": "What is the roof mainly made of?",
+   "type": "categorical",
+   "categories": [
+    {
+     "label": "Asbestos sheet",
+     "column": null
+    },
+    {
+     "label": "Canvas/nylon/cardboard",
+     "column": "roof_material_canvas_nylon_cartons_cardboard"
+    },
+    {
+     "label": "Concrete/Cement",
+     "column": "roof_material_concrete_cement"
+    },
+    {
+     "label": "Dung/mud",
+     "column": "roof_material_dung__mud"
+    },
+    {
+     "label": "Grass/makuti thatch",
+     "column": "roof_material_grass__makuti_thatch_twigs"
+    },
+    {
+     "label": "Iron sheets",
+     "column": "roof_material_iron_sheets_decra_versatile"
+    },
+    {
+     "label": "Tiles",
+     "column": "roof_material_tiles"
+    },
+    {
+     "label": "Tin cans",
+     "column": "roof_material_tin_cans"
+    }
+   ],
+   "reference": "Asbestos sheet",
+   "columns": [
+    "roof_material_canvas_nylon_cartons_cardboard",
+    "roof_material_concrete_cement",
+    "roof_material_dung__mud",
+    "roof_material_grass__makuti_thatch_twigs",
+    "roof_material_iron_sheets_decra_versatile",
+    "roof_material_tiles",
+    "roof_material_tin_cans"
+   ]
+  },
+  {
+   "key": "wall_material",
+   "theme": "The home",
+   "label": "Wall material",
+   "question": "What are the walls mainly made of?",
+   "type": "categorical",
+   "categories": [
+    {
+     "label": "Bamboo with mud",
+     "column": null
+    },
+    {
+     "label": "Bricks",
+     "column": "wall_material_bricks"
+    },
+    {
+     "label": "Cane/palm/trunks",
+     "column": "wall_material_cane_palm_trunks"
+    },
+    {
+     "label": "Cement blocks",
+     "column": "wall_material_cement_blocks"
+    },
+    {
+     "label": "Concrete/Cement",
+     "column": "wall_material_concrete_cement"
+    },
+    {
+     "label": "Covered adobe",
+     "column": "wall_material_covered_adobe"
+    },
+    {
+     "label": "Grass/reeds",
+     "column": "wall_material_grass_reeds"
+    },
+    {
+     "label": "Iron sheets",
+     "column": "wall_material_iron_sheets"
+    },
+    {
+     "label": "Mud/cow dung",
+     "column": "wall_material_mud_cow_dung"
+    },
+    {
+     "label": "No walls",
+     "column": "wall_material_no_walls"
+    },
+    {
+     "label": "Other",
+     "column": "wall_material_other"
+    },
+    {
+     "label": "Plywood/Cardboard",
+     "column": "wall_material_plywood_cardboard"
+    },
+    {
+     "label": "Precast wall",
+     "column": "wall_material_precast_wall"
+    },
+    {
+     "label": "Reused wood",
+     "column": "wall_material_reused_wood"
+    },
+    {
+     "label": "Stone with lime/cement",
+     "column": "wall_material_stone_with_lime_cement"
+    },
+    {
+     "label": "Stone with mud",
+     "column": "wall_material_stone_with_mud"
+    },
+    {
+     "label": "Uncovered adobe",
+     "column": "wall_material_uncovered_adobe"
+    },
+    {
+     "label": "Wood planks/shingles/timber",
+     "column": "wall_material_wood_planks_shingles_timber"
+    }
+   ],
+   "reference": "Bamboo with mud",
+   "columns": [
+    "wall_material_bricks",
+    "wall_material_cane_palm_trunks",
+    "wall_material_cement_blocks",
+    "wall_material_concrete_cement",
+    "wall_material_covered_adobe",
+    "wall_material_grass_reeds",
+    "wall_material_iron_sheets",
+    "wall_material_mud_cow_dung",
+    "wall_material_no_walls",
+    "wall_material_other",
+    "wall_material_plywood_cardboard",
+    "wall_material_precast_wall",
+    "wall_material_reused_wood",
+    "wall_material_stone_with_lime_cement",
+    "wall_material_stone_with_mud",
+    "wall_material_uncovered_adobe",
+    "wall_material_wood_planks_shingles_timber"
+   ]
+  },
+  {
+   "key": "floor_material",
+   "theme": "The home",
+   "label": "Floor material",
+   "question": "What is the floor mainly made of?",
+   "type": "categorical",
+   "categories": [
+    {
+     "label": "Ceramic tiles",
+     "column": null
+    },
+    {
+     "label": "Concrete/cement/terrazzo",
+     "column": "floor_material_concrete_cement_terrazo"
+    },
+    {
+     "label": "Dung",
+     "column": "floor_material_dung"
+    },
+    {
+     "label": "Earth/sand",
+     "column": "floor_material_earth_sand"
+    },
+    {
+     "label": "Palm/bamboo",
+     "column": "floor_material_palm_bamboo"
+    },
+    {
+     "label": "Parquet or polished wood",
+     "column": "floor_material_parquet_or_polished_wood"
+    },
+    {
+     "label": "Vinyl or asphalt strips",
+     "column": "floor_material_vinyl_or_asphalt_strips"
+    },
+    {
+     "label": "Wall-to-wall carpet",
+     "column": "floor_material_wall_to_wall_carpet"
+    },
+    {
+     "label": "Wood planks/shingles/timber",
+     "column": "floor_material_wood_planks_shingles_timber"
+    }
+   ],
+   "reference": "Ceramic tiles",
+   "columns": [
+    "floor_material_concrete_cement_terrazo",
+    "floor_material_dung",
+    "floor_material_earth_sand",
+    "floor_material_palm_bamboo",
+    "floor_material_parquet_or_polished_wood",
+    "floor_material_vinyl_or_asphalt_strips",
+    "floor_material_wall_to_wall_carpet",
+    "floor_material_wood_planks_shingles_timber"
+   ]
+  },
+  {
+   "key": "drinking_water_source",
+   "theme": "Water, toilet & energy",
+   "label": "Drinking water source",
+   "question": "Where does the household mainly get drinking water?",
+   "type": "categorical",
+   "categories": [
+    {
+     "label": "Borehole/Tube well",
+     "column": null
+    },
+    {
+     "label": "Bottled water",
+     "column": "drinking_water_source_bottled_water"
+    },
+    {
+     "label": "Dam",
+     "column": "drinking_water_source_dam"
+    },
+    {
+     "label": "Lake",
+     "column": "drinking_water_source_lake"
+    },
+    {
+     "label": "Piped to yard/plot",
+     "column": "drinking_water_source_piped_to_yard_plot"
+    },
+    {
+     "label": "Piped into dwelling",
+     "column": "drinking_water_source_piped_into_dwelling"
+    },
+    {
+     "label": "Pond",
+     "column": "drinking_water_source_pond"
+    },
+    {
+     "label": "Protected Spring",
+     "column": "drinking_water_source_protected_spring"
+    },
+    {
+     "label": "Protected Well",
+     "column": "drinking_water_source_protected_well"
+    },
+    {
+     "label": "Public tap/Standpipe",
+     "column": "drinking_water_source_public_tap_standpipe"
+    },
+    {
+     "label": "Rain/Harvested water",
+     "column": "drinking_water_source_rain_harvested_water"
+    },
+    {
+     "label": "Stream/river",
+     "column": "drinking_water_source_stream_river"
+    },
+    {
+     "label": "Unprotected Spring",
+     "column": "drinking_water_source_unprotected_spring"
+    },
+    {
+     "label": "Unprotected Well",
+     "column": "drinking_water_source_unprotected_well"
+    },
+    {
+     "label": "Water Vendor",
+     "column": "drinking_water_source_water_vendor"
+    }
+   ],
+   "reference": "Borehole/Tube well",
+   "columns": [
+    "drinking_water_source_bottled_water",
+    "drinking_water_source_dam",
+    "drinking_water_source_lake",
+    "drinking_water_source_piped_to_yard_plot",
+    "drinking_water_source_piped_into_dwelling",
+    "drinking_water_source_pond",
+    "drinking_water_source_protected_spring",
+    "drinking_water_source_protected_well",
+    "drinking_water_source_public_tap_standpipe",
+    "drinking_water_source_rain_harvested_water",
+    "drinking_water_source_stream_river",
+    "drinking_water_source_unprotected_spring",
+    "drinking_water_source_unprotected_well",
+    "drinking_water_source_water_vendor"
+   ]
+  },
+  {
+   "key": "toilet_facility",
+   "theme": "Water, toilet & energy",
+   "label": "Toilet",
+   "question": "What kind of toilet does the household use?",
+   "type": "categorical",
+   "categories": [
+    {
+     "label": "Bucket latrine",
+     "column": null
+    },
+    {
+     "label": "Flush to Bio-septic tank",
+     "column": "toilet_facility_flush_to_bio_septic_tank"
+    },
+    {
+     "label": "Flush to Cess pool",
+     "column": "toilet_facility_flush_to_cess_pool"
+    },
+    {
+     "label": "Flush to Main Sewer",
+     "column": "toilet_facility_flush_to_main_sewer"
+    },
+    {
+     "label": "Flush to Septic tank",
+     "column": "toilet_facility_flush_to_septic_tank"
+    },
+    {
+     "label": "No toilet (open defecation)",
+     "column": "toilet_facility_open"
+    },
+    {
+     "label": "Pit latrine (uncovered)",
+     "column": "toilet_facility_pit_latrine_uncovered"
+    },
+    {
+     "label": "Pit latrine (covered)",
+     "column": "toilet_facility_pit_latrine_covered"
+    },
+    {
+     "label": "VIP pit latrine",
+     "column": "toilet_facility_vip_pit_latrin"
+    }
+   ],
+   "reference": "Bucket latrine",
+   "columns": [
+    "toilet_facility_flush_to_bio_septic_tank",
+    "toilet_facility_flush_to_cess_pool",
+    "toilet_facility_flush_to_main_sewer",
+    "toilet_facility_flush_to_septic_tank",
+    "toilet_facility_open",
+    "toilet_facility_pit_latrine_uncovered",
+    "toilet_facility_pit_latrine_covered",
+    "toilet_facility_vip_pit_latrin"
+   ]
+  },
+  {
+   "key": "cooking_fuel_source",
+   "theme": "Water, toilet & energy",
+   "label": "Cooking fuel",
+   "question": "What does the household mainly cook with?",
+   "type": "categorical",
+   "categories": [
+    {
+     "label": "Biogas",
+     "column": null
+    },
+    {
+     "label": "Charcoal",
+     "column": "cooking_fuel_source_charcoal"
+    },
+    {
+     "label": "Electricity",
+     "column": "cooking_fuel_source_electricity"
+    },
+    {
+     "label": "Firewood and products of wood",
+     "column": "cooking_fuel_source_firewood_and_products_of_wood"
+    },
+    {
+     "label": "LPG (gas)",
+     "column": "cooking_fuel_source_lpg_gas"
+    },
+    {
+     "label": "Other",
+     "column": "cooking_fuel_source_other_specify"
+    },
+    {
+     "label": "Paraffin",
+     "column": "cooking_fuel_source_paraffin"
+    },
+    {
+     "label": "Solar",
+     "column": "cooking_fuel_source_solar"
+    }
+   ],
+   "reference": "Biogas",
+   "columns": [
+    "cooking_fuel_source_charcoal",
+    "cooking_fuel_source_electricity",
+    "cooking_fuel_source_firewood_and_products_of_wood",
+    "cooking_fuel_source_lpg_gas",
+    "cooking_fuel_source_other_specify",
+    "cooking_fuel_source_paraffin",
+    "cooking_fuel_source_solar"
+   ]
+  },
+  {
+   "key": "lighting_source",
+   "theme": "Water, toilet & energy",
+   "label": "Lighting",
+   "question": "What does the household mainly use for light?",
+   "type": "categorical",
+   "categories": [
+    {
+     "label": "Car battery",
+     "column": null
+    },
+    {
+     "label": "Candle",
+     "column": "lighting_source_candle"
+    },
+    {
+     "label": "Electricity",
+     "column": "lighting_source_electricity"
+    },
+    {
+     "label": "Fuel wood",
+     "column": "lighting_source_fuel_wood"
+    },
+    {
+     "label": "Gas Lamp",
+     "column": "lighting_source_gas_lamp"
+    },
+    {
+     "label": "Generator (Diesel/Petrol)",
+     "column": "lighting_source_generator_diesel_petrol"
+    },
+    {
+     "label": "Paraffin Lantern",
+     "column": "lighting_source_paraffin_lantern"
+    },
+    {
+     "label": "Paraffin Pressure lamp",
+     "column": "lighting_source_paraffin_pressure_lamp"
+    },
+    {
+     "label": "Paraffin Tin lamp",
+     "column": "lighting_source_paraffin_tin_lamp"
+    },
+    {
+     "label": "Solar",
+     "column": "lighting_source_solar"
+    },
+    {
+     "label": "Torch/Spot light-Dry cells",
+     "column": "lighting_source_torch_spot_light_dry_cells"
+    },
+    {
+     "label": "Torch/Spotlight-Solar Charged",
+     "column": "lighting_source_torch_spotlight_solar_charged"
+    }
+   ],
+   "reference": "Car battery",
+   "columns": [
+    "lighting_source_candle",
+    "lighting_source_electricity",
+    "lighting_source_fuel_wood",
+    "lighting_source_gas_lamp",
+    "lighting_source_generator_diesel_petrol",
+    "lighting_source_paraffin_lantern",
+    "lighting_source_paraffin_pressure_lamp",
+    "lighting_source_paraffin_tin_lamp",
+    "lighting_source_solar",
+    "lighting_source_torch_spot_light_dry_cells",
+    "lighting_source_torch_spotlight_solar_charged"
+   ]
+  },
+  {
+   "key": "access_electricity",
+   "theme": "Water, toilet & energy",
+   "label": "Has electricity",
+   "question": "Does the household have electricity?",
+   "type": "binary",
+   "col": "access_electricity_yes",
+   "columns": [
+    "access_electricity_yes"
+   ]
+  },
+  {
+   "key": "own_radio",
+   "theme": "Things you own",
+   "label": "Radio",
+   "question": "Owns a radio",
+   "type": "binary",
+   "col": "own_radio_yes",
+   "columns": [
+    "own_radio_yes"
+   ]
+  },
+  {
+   "key": "own_tv",
+   "theme": "Things you own",
+   "label": "TV",
+   "question": "Owns a TV",
+   "type": "binary",
+   "col": "owns_tv_yes",
+   "columns": [
+    "owns_tv_yes"
+   ]
+  },
+  {
+   "key": "own_phone",
+   "theme": "Things you own",
+   "label": "Mobile phone",
+   "question": "Owns a mobile phone",
+   "type": "binary",
+   "col": "own_phone_yes",
+   "columns": [
+    "own_phone_yes"
+   ]
+  },
+  {
+   "key": "own_landline",
+   "theme": "Things you own",
+   "label": "Landline phone",
+   "question": "Owns a landline phone",
+   "type": "binary",
+   "col": "own_landline_yes",
+   "columns": [
+    "own_landline_yes"
+   ]
+  },
+  {
+   "key": "own_desktop",
+   "theme": "Things you own",
+   "label": "Desktop computer",
+   "question": "Owns a desktop computer",
+   "type": "binary",
+   "col": "own_desktop_yes",
+   "columns": [
+    "own_desktop_yes"
+   ]
+  },
+  {
+   "key": "own_laptop",
+   "theme": "Things you own",
+   "label": "Laptop",
+   "question": "Owns a laptop",
+   "type": "binary",
+   "col": "own_laptop_yes",
+   "columns": [
+    "own_laptop_yes"
+   ]
+  },
+  {
+   "key": "own_tablet",
+   "theme": "Things you own",
+   "label": "Tablet",
+   "question": "Owns a tablet",
+   "type": "binary",
+   "col": "own_tablet_yes",
+   "columns": [
+    "own_tablet_yes"
+   ]
+  },
+  {
+   "key": "own_fridge",
+   "theme": "Things you own",
+   "label": "Fridge",
+   "question": "Owns a fridge",
+   "type": "binary",
+   "col": "own_fridge_yes",
+   "columns": [
+    "own_fridge_yes"
+   ]
+  },
+  {
+   "key": "own_hometheatre",
+   "theme": "Things you own",
+   "label": "Home theatre",
+   "question": "Owns a home theatre system",
+   "type": "binary",
+   "col": "own_hometheatre_yes",
+   "columns": [
+    "own_hometheatre_yes"
+   ]
+  },
+  {
+   "key": "own_bicycle",
+   "theme": "Things you own",
+   "label": "Bicycle",
+   "question": "Owns a bicycle",
+   "type": "binary",
+   "col": "own_bicycle_yes",
+   "columns": [
+    "own_bicycle_yes"
+   ]
+  },
+  {
+   "key": "own_mtcycle",
+   "theme": "Things you own",
+   "label": "Motorcycle",
+   "question": "Owns a motorcycle",
+   "type": "binary",
+   "col": "own_mtcycle_yes",
+   "columns": [
+    "own_mtcycle_yes"
+   ]
+  },
+  {
+   "key": "own_car",
+   "theme": "Things you own",
+   "label": "Car",
+   "question": "Owns a car",
+   "type": "binary",
+   "col": "own_car_yes",
+   "columns": [
+    "own_car_yes"
+   ]
+  },
+  {
+   "key": "own_pickup",
+   "theme": "Things you own",
+   "label": "Pickup truck",
+   "question": "Owns a pickup truck",
+   "type": "binary",
+   "col": "owns_pickup_yes",
+   "columns": [
+    "owns_pickup_yes"
+   ]
+  }
+ ],
+ "extra_vars": [
+  {
+   "key": "x_owns_mattresses",
+   "label": "Owns a mattress",
+   "theme": "Everyday household items",
+   "type": "binary",
+   "columns": [
+    "x_owns_mattresses"
+   ],
+   "share": 0.872
+  },
+  {
+   "key": "x_owns_mosquito_net",
+   "label": "Owns a mosquito net",
+   "theme": "Everyday household items",
+   "type": "binary",
+   "columns": [
+    "x_owns_mosquito_net"
+   ],
+   "share": 0.553
+  },
+  {
+   "key": "x_owns_blankets",
+   "label": "Owns blankets",
+   "theme": "Everyday household items",
+   "type": "binary",
+   "columns": [
+    "x_owns_blankets"
+   ],
+   "share": 0.817
+  },
+  {
+   "key": "x_owns_curtains_and_accessories",
+   "label": "Owns curtains",
+   "theme": "Everyday household items",
+   "type": "binary",
+   "columns": [
+    "x_owns_curtains_and_accessories"
+   ],
+   "share": 0.559
+  },
+  {
+   "key": "x_owns_jiko_charcoal",
+   "label": "Owns a charcoal jiko",
+   "theme": "Everyday household items",
+   "type": "binary",
+   "columns": [
+    "x_owns_jiko_charcoal"
+   ],
+   "share": 0.461
+  },
+  {
+   "key": "x_owns_kerosene_stove",
+   "label": "Owns a kerosene stove",
+   "theme": "Everyday household items",
+   "type": "binary",
+   "columns": [
+    "x_owns_kerosene_stove"
+   ],
+   "share": 0.091
+  },
+  {
+   "key": "x_owns_electric_iron",
+   "label": "Owns an electric iron",
+   "theme": "Electrical goods",
+   "type": "binary",
+   "columns": [
+    "x_owns_electric_iron"
+   ],
+   "share": 0.108
+  },
+  {
+   "key": "x_owns_antennae_aerial_satellite_decoder",
+   "label": "Owns a TV decoder / satellite dish",
+   "theme": "Electrical goods",
+   "type": "binary",
+   "columns": [
+    "x_owns_antennae_aerial_satellite_decoder"
+   ],
+   "share": 0.211
+  },
+  {
+   "key": "x_owns_woofers_speakers_tuitors",
+   "label": "Owns speakers / woofers",
+   "theme": "Electrical goods",
+   "type": "binary",
+   "columns": [
+    "x_owns_woofers_speakers_tuitors"
+   ],
+   "share": 0.187
+  },
+  {
+   "key": "x_owns_water_dispenser",
+   "label": "Owns a water dispenser",
+   "theme": "Electrical goods",
+   "type": "binary",
+   "columns": [
+    "x_owns_water_dispenser"
+   ],
+   "share": 0.025
+  },
+  {
+   "key": "x_owns_micro_wave_oven",
+   "label": "Owns a microwave",
+   "theme": "Electrical goods",
+   "type": "binary",
+   "columns": [
+    "x_owns_micro_wave_oven"
+   ],
+   "share": 0.016
+  },
+  {
+   "key": "x_owns_washing_machine",
+   "label": "Owns a washing machine",
+   "theme": "Electrical goods",
+   "type": "binary",
+   "columns": [
+    "x_owns_washing_machine"
+   ],
+   "share": 0.005
+  },
+  {
+   "key": "x_owns_sewing_machine",
+   "label": "Owns a sewing machine",
+   "theme": "Livelihood",
+   "type": "binary",
+   "columns": [
+    "x_owns_sewing_machine"
+   ],
+   "share": 0.014
+  },
+  {
+   "key": "x_owns_animal_drawn_vehicles",
+   "label": "Owns an animal-drawn cart",
+   "theme": "Livelihood",
+   "type": "binary",
+   "columns": [
+    "x_owns_animal_drawn_vehicles"
+   ],
+   "share": 0.006
+  },
+  {
+   "key": "x_household_not_enough_food",
+   "label": "Worried there would not be enough food",
+   "theme": "Hunger (self-reported)",
+   "type": "binary",
+   "columns": [
+    "x_household_not_enough_food"
+   ],
+   "share": 0.65
+  },
+  {
+   "key": "x_household_missed_meal",
+   "label": "Someone skipped a meal",
+   "theme": "Hunger (self-reported)",
+   "type": "binary",
+   "columns": [
+    "x_household_missed_meal"
+   ],
+   "share": 0.432
+  },
+  {
+   "key": "x_household_ran_out_of_food",
+   "label": "Household ran out of food",
+   "theme": "Hunger (self-reported)",
+   "type": "binary",
+   "columns": [
+    "x_household_ran_out_of_food"
+   ],
+   "share": 0.421
+  },
+  {
+   "key": "x_household_without_food_for_day",
+   "label": "Someone went a whole day without eating",
+   "theme": "Hunger (self-reported)",
+   "type": "binary",
+   "columns": [
+    "x_household_without_food_for_day"
+   ],
+   "share": 0.215
+  },
+  {
+   "key": "x_household_cannot_eat_preferred_food",
+   "label": "Could not eat the foods they prefer",
+   "theme": "Hunger (self-reported)",
+   "type": "binary",
+   "columns": [
+    "x_household_cannot_eat_preferred_food"
+   ],
+   "share": 0.672
+  },
+  {
+   "key": "x_household_fewer_kinds_of_food",
+   "label": "Ate fewer kinds of food",
+   "theme": "Hunger (self-reported)",
+   "type": "binary",
+   "columns": [
+    "x_household_fewer_kinds_of_food"
+   ],
+   "share": 0.638
+  },
+  {
+   "key": "x_household_ate_less_than_should",
+   "label": "Ate less than they should",
+   "theme": "Hunger (self-reported)",
+   "type": "binary",
+   "columns": [
+    "x_household_ate_less_than_should"
+   ],
+   "share": 0.517
+  },
+  {
+   "key": "x_household_hungry_did_not_eat",
+   "label": "Was hungry but did not eat",
+   "theme": "Hunger (self-reported)",
+   "type": "binary",
+   "columns": [
+    "x_household_hungry_did_not_eat"
+   ],
+   "share": 0.368
+  },
+  {
+   "key": "x_owns_electric_gas_cooker_meko",
+   "label": "Owns a gas or electric cooker",
+   "theme": "Electrical goods",
+   "type": "binary",
+   "columns": [
+    "x_owns_electric_gas_cooker_meko"
+   ],
+   "share": 0.19
+  },
+  {
+   "key": "x_owns_electric_kettle",
+   "label": "Owns an electric kettle",
+   "theme": "Electrical goods",
+   "type": "binary",
+   "columns": [
+    "x_owns_electric_kettle"
+   ],
+   "share": 0.031
+  },
+  {
+   "key": "x_owns_air_conditioner_fans",
+   "label": "Owns a fan or air conditioner",
+   "theme": "Electrical goods",
+   "type": "binary",
+   "columns": [
+    "x_owns_air_conditioner_fans"
+   ],
+   "share": 0.013
+  },
+  {
+   "key": "x_owns_food_mixers_blenders_juicers",
+   "label": "Owns a blender",
+   "theme": "Electrical goods",
+   "type": "binary",
+   "columns": [
+    "x_owns_food_mixers_blenders_juicers"
+   ],
+   "share": 0.025
+  },
+  {
+   "key": "x_owns_towels",
+   "label": "Owns towels",
+   "theme": "Everyday household items",
+   "type": "binary",
+   "columns": [
+    "x_owns_towels"
+   ],
+   "share": 0.427
+  },
+  {
+   "key": "x_employer_benefits_provided_nhif",
+   "label": "Head's employer pays for health insurance",
+   "theme": "Work",
+   "type": "binary",
+   "columns": [
+    "x_employer_benefits_provided_nhif"
+   ],
+   "share": 0.095
+  },
+  {
+   "key": "x_employer_benefits_provided_nssf",
+   "label": "Head's employer pays into a pension",
+   "theme": "Work",
+   "type": "binary",
+   "columns": [
+    "x_employer_benefits_provided_nssf"
+   ],
+   "share": 0.086
+  },
+  {
+   "key": "x_head_written_contract",
+   "label": "Head has a written work contract",
+   "theme": "Work",
+   "type": "binary",
+   "columns": [
+    "x_head_written_contract"
+   ],
+   "share": 0.104
+  },
+  {
+   "key": "x_head_second_job",
+   "label": "Head has a second job",
+   "theme": "Work",
+   "type": "binary",
+   "columns": [
+    "x_head_second_job"
+   ],
+   "share": 0.084
+  },
+  {
+   "key": "x_head_big_workplace",
+   "label": "Head works somewhere with 10+ staff",
+   "theme": "Work",
+   "type": "binary",
+   "columns": [
+    "x_head_big_workplace"
+   ],
+   "share": 0.124
+  },
+  {
+   "key": "x_head_moved_county",
+   "label": "Head was born in another county",
+   "theme": "Household head",
+   "type": "binary",
+   "columns": [
+    "x_head_moved_county"
+   ],
+   "share": 0.214
+  },
+  {
+   "key": "x_kept_livestock",
+   "label": "Kept livestock (last month)",
+   "theme": "Livelihood",
+   "type": "binary",
+   "columns": [
+    "x_kept_livestock"
+   ],
+   "share": 0.458
+  },
+  {
+   "key": "x_sold_livestock",
+   "label": "Sold livestock (last month)",
+   "theme": "Livelihood",
+   "type": "binary",
+   "columns": [
+    "x_sold_livestock"
+   ],
+   "share": 0.085
+  },
+  {
+   "key": "x_sold_cattle",
+   "label": "Sold cattle (last month)",
+   "theme": "Livelihood",
+   "type": "binary",
+   "columns": [
+    "x_sold_cattle"
+   ],
+   "share": 0.018
+  },
+  {
+   "key": "x_sold_goats_sheep",
+   "label": "Sold goats or sheep (last month)",
+   "theme": "Livelihood",
+   "type": "binary",
+   "columns": [
+    "x_sold_goats_sheep"
+   ],
+   "share": 0.044
+  },
+  {
+   "key": "x_sold_chickens",
+   "label": "Sold chickens (last month)",
+   "theme": "Livelihood",
+   "type": "binary",
+   "columns": [
+    "x_sold_chickens"
+   ],
+   "share": 0.027
+  },
+  {
+   "key": "x_sold_milk",
+   "label": "Sold milk (last month)",
+   "theme": "Livelihood",
+   "type": "binary",
+   "columns": [
+    "x_sold_milk"
+   ],
+   "share": 0.068
+  },
+  {
+   "key": "x_grew_crops",
+   "label": "Grew crops (last 12 months)",
+   "theme": "Livelihood",
+   "type": "binary",
+   "columns": [
+    "x_grew_crops"
+   ],
+   "share": 0.544
+  },
+  {
+   "key": "x_sold_crops",
+   "label": "Sold crops (last month)",
+   "theme": "Livelihood",
+   "type": "binary",
+   "columns": [
+    "x_sold_crops"
+   ],
+   "share": 0.115
+  },
+  {
+   "key": "x_household_type",
+   "label": "Type of farming household",
+   "theme": "Livelihood",
+   "type": "categorical",
+   "categories": [
+    {
+     "label": "Not farming",
+     "column": null
+    },
+    {
+     "label": "Crop farming",
+     "column": "x_household_type_crop_farming"
+    },
+    {
+     "label": "Livestock farming",
+     "column": "x_household_type_livestock_farming"
+    },
+    {
+     "label": "Mixed farming",
+     "column": "x_household_type_mixed_farming"
+    }
+   ],
+   "reference": "Not farming",
+   "columns": [
+    "x_household_type_crop_farming",
+    "x_household_type_livestock_farming",
+    "x_household_type_mixed_farming"
+   ]
+  },
+  {
+   "key": "x_respondent_religion",
+   "label": "Religion of household head",
+   "theme": "Sensitive characteristics",
+   "type": "categorical",
+   "categories": [
+    {
+     "label": "Protestant",
+     "column": null
+    },
+    {
+     "label": "African Instituted Churches",
+     "column": "x_respondent_religion_african_instituted_churches"
+    },
+    {
+     "label": "Catholic",
+     "column": "x_respondent_religion_catholic"
+    },
+    {
+     "label": "Evangelical Churches",
+     "column": "x_respondent_religion_evangelical_churches"
+    },
+    {
+     "label": "Islam",
+     "column": "x_respondent_religion_islam"
+    },
+    {
+     "label": "No Religion/Atheists",
+     "column": "x_respondent_religion_no_religion_atheists"
+    },
+    {
+     "label": "Other",
+     "column": "x_respondent_religion_other"
+    },
+    {
+     "label": "Other Christian",
+     "column": "x_respondent_religion_other_christian"
+    },
+    {
+     "label": "Traditionalist",
+     "column": "x_respondent_religion_traditionalist"
+    }
+   ],
+   "reference": "Protestant",
+   "columns": [
+    "x_respondent_religion_african_instituted_churches",
+    "x_respondent_religion_catholic",
+    "x_respondent_religion_evangelical_churches",
+    "x_respondent_religion_islam",
+    "x_respondent_religion_no_religion_atheists",
+    "x_respondent_religion_other",
+    "x_respondent_religion_other_christian",
+    "x_respondent_religion_traditionalist"
+   ]
+  },
+  {
+   "key": "x_num_children",
+   "label": "Number of children (under 18)",
+   "theme": "Who lives here",
+   "type": "numeric",
+   "columns": [
+    "x_num_children"
+   ]
+  },
+  {
+   "key": "x_age_household_head",
+   "label": "Age of household head",
+   "theme": "Who lives here",
+   "type": "numeric",
+   "columns": [
+    "x_age_household_head"
+   ]
+  }
+ ],
+ "extra_notes": {
+  "Hunger (self-reported)": "These answers come straight from the household. They are strongly linked to poverty, but in a real registration system people could easily change their answers to pay less.",
+  "Sensitive characteristics": "Religion may make predictions more accurate, but charging people differently because of their religion would be discriminatory. Is a more accurate model always a fairer one?",
+  "Everyday household items": "Cheap items that almost all households own (or don't). Do they tell the model anything new?",
+  "Electrical goods": "Items that usually signal electricity access and higher spending.",
+  "Livelihood": "How the household makes a living.",
+  "Who lives here": "Simple counts that the model only captures indirectly.",
+  "Work": "About the household head's main job. Most informal workers have no contract or benefits."
+ },
+ "fairness_groups": [
+  {
+   "key": "g_sex",
+   "label": "Sex of household head"
+  },
+  {
+   "key": "g_electricity",
+   "label": "Has electricity"
+  },
+  {
+   "key": "g_women",
+   "label": "Share of working-age women"
+  },
+  {
+   "key": "g_education",
+   "label": "Education of household head"
+  },
+  {
+   "key": "g_head_age",
+   "label": "Age of household head"
+  },
+  {
+   "key": "g_hh_size",
+   "label": "Household size"
+  },
+  {
+   "key": "g_children",
+   "label": "Number of children"
+  },
+  {
+   "key": "g_region",
+   "label": "Region"
+  },
+  {
+   "key": "g_county",
+   "label": "County"
+  },
+  {
+   "key": "g_marital",
+   "label": "Marital status of head"
+  },
+  {
+   "key": "g_ownership",
+   "label": "Owns or rents home"
+  },
+  {
+   "key": "g_toilet",
+   "label": "Toilet"
+  },
+  {
+   "key": "g_farmer",
+   "label": "Head farms own land"
+  }
+ ],
+ "poverty_line": {
+  "Urban": 7192.9536,
+  "Rural": 3948.0776
+ },
+ "baseline": {
+  "urban": {
+   "coef": {
+    "const": 9.512423805239997,
+    "household_size": -0.02487659566602474,
+    "mm_age": -0.2077930791134312,
+    "prop_over65": 0.01632606292414529,
+    "prop_under5": 0.2434711178876377,
+    "prop_m1864": 0.04754772302537119,
+    "prop_w1864": 0.0117675901305071,
+    "nr_rooms": 0.07558891073056109,
+    "county_bomet": -0.2901192601345365,
+    "county_bungoma": 0.06509409688228207,
+    "county_busia": -0.1790538658677855,
+    "county_elgeyo_marakwet": -0.3403846345660714,
+    "county_embu": 0.009555572510707933,
+    "county_garissa": 0.112611169058895,
+    "county_homa_bay": 0.07441782833918986,
+    "county_isiolo": 0.001451910377103793,
+    "county_kajiado": -0.02235988740122818,
+    "county_kakamega": 0.01181878995308117,
+    "county_kericho": -0.00499749246443526,
+    "county_kiambu": 0.08469608361019265,
+    "county_kilifi": 0.009163777690745334,
+    "county_kirinyaga": -0.170629659823892,
+    "county_kisii": -4.467880659564383e-05,
+    "county_kisumu": -0.01735307251208745,
+    "county_kitui": 0.08483662184941781,
+    "county_kwale": 0.2056036251661869,
+    "county_laikipia": -0.1362093091589819,
+    "county_lamu": -0.3309404142626238,
+    "county_machakos": -0.02995139954979556,
+    "county_makueni": -0.2372307875777684,
+    "county_mandera": 0.4469463047906737,
+    "county_marsabit": 0.2686473209300001,
+    "county_meru": 0.0973163767516847,
+    "county_migori": 0.1060078930770759,
+    "county_mombasa": 0.1437704482130944,
+    "county_muranga": -0.08413916428534451,
+    "county_nairobi": 0.09765418340814347,
+    "county_nakuru": 0.04926566882001054,
+    "county_nandi": 0.2205318088038226,
+    "county_narok": 0.3242707392376398,
+    "county_nyamira": 0.1317322532900426,
+    "county_nyandarua": -0.1591006364598619,
+    "county_nyeri": -0.1042951099216678,
+    "county_samburu": -0.2513905079451372,
+    "county_siaya": 0.02970724588386642,
+    "county_taita_taveta": -0.009424750665252946,
+    "county_tana_river": -0.1655299848405074,
+    "county_tharaka_nithi": 0.1720984256101391,
+    "county_trans_nzoia": -0.05676306051647367,
+    "county_turkana": -0.09819898497174137,
+    "county_uasin_gishu": -0.2047828510573874,
+    "county_vihiga": -0.1680414005462376,
+    "county_wajir": 0.04931687774587501,
+    "county_west_pokot": -0.06558356969528512,
+    "hhhead_woman_male": -0.0319890165233272,
+    "working_yes": 0.09047307829338835,
+    "marital_status_living_together": -0.04738178645823155,
+    "marital_status_married_monogamous": 0.0168164517030418,
+    "marital_status_married_polygamous": 0.01981250678295043,
+    "marital_status_never_married": 0.06541914655887471,
+    "marital_status_separated": 0.05305062480028777,
+    "marital_status_widow_or_widower": -0.006909861468449963,
+    "education_level_informal_education_madrasa_adult_basic": 0.08967749906691724,
+    "education_level_middle_level_college_certificate_diploma": 0.1349428972065518,
+    "education_level_none": -4.827340128320832e-16,
+    "education_level_pre_primary": 0.08670983136549015,
+    "education_level_primary": 0.04662234847267324,
+    "education_level_secondary_level": 0.08178164574859698,
+    "education_level_university_post_graduate": 0.2612571622150755,
+    "education_level_universityundergraduate": 0.2311765010579564,
+    "education_level_vocational": 0.03831159842382015,
+    "dwelling_flat": -0.06942307449739721,
+    "dwelling_landie": -0.121175143495947,
+    "dwelling_maisonnette": -0.0665587452962364,
+    "dwelling_manyatta_traditional_house": -0.1723917081647222,
+    "dwelling_other_specify": -0.4048054429767627,
+    "dwelling_shanty": -0.1299403535364584,
+    "dwelling_swahili": -0.09437819206306705,
+    "ownership_dwelling_no_rent_with_consent_of_owner": -0.08084699793110217,
+    "ownership_dwelling_owns": -0.05783599764438935,
+    "ownership_dwelling_pays_rent_lease": -0.07507897051243856,
+    "roof_material_canvas_nylon_cartons_cardboard": 0.01314559027728168,
+    "roof_material_concrete_cement": 0.03945628806715307,
+    "roof_material_dung__mud": -0.05537813622451582,
+    "roof_material_grass__makuti_thatch_twigs": 0.002830555060595152,
+    "roof_material_iron_sheets_decra_versatile": -0.03175622974782832,
+    "roof_material_tiles": 0.1564269392297727,
+    "roof_material_tin_cans": 0.1248589894262131,
+    "wall_material_bricks": -0.01627570716255305,
+    "wall_material_cane_palm_trunks": -0.09395465617408455,
+    "wall_material_cement_blocks": 0.07869981785431257,
+    "wall_material_concrete_cement": 0.03326163388175385,
+    "wall_material_covered_adobe": 0.06947767446795527,
+    "wall_material_grass_reeds": -0.1981671957854757,
+    "wall_material_iron_sheets": -0.04701337284152646,
+    "wall_material_mud_cow_dung": -0.03658964337578957,
+    "wall_material_no_walls": -0.1745175159686235,
+    "wall_material_other": -1.141899095141102e-16,
+    "wall_material_plywood_cardboard": -0.08625089931151042,
+    "wall_material_precast_wall": -0.1502994582474426,
+    "wall_material_reused_wood": 0.01201137948349773,
+    "wall_material_stone_with_lime_cement": 0.02723129878012437,
+    "wall_material_stone_with_mud": -0.01976336107784593,
+    "wall_material_uncovered_adobe": 0.08793626293105727,
+    "wall_material_wood_planks_shingles_timber": 0.01624252258498504,
+    "floor_material_concrete_cement_terrazo": -0.1036471302384561,
+    "floor_material_dung": -0.1455938266982638,
+    "floor_material_earth_sand": -0.1457525083671869,
+    "floor_material_palm_bamboo": -5.59884214677664e-16,
+    "floor_material_parquet_or_polished_wood": 0.1364962000095005,
+    "floor_material_vinyl_or_asphalt_strips": 0.01526247657563351,
+    "floor_material_wall_to_wall_carpet": 0.02921131468489058,
+    "floor_material_wood_planks_shingles_timber": -0.1519029568581503,
+    "drinking_water_source_bottled_water": 0.1958355687043568,
+    "drinking_water_source_dam": -0.3362335248649042,
+    "drinking_water_source_lake": 0.05114868246916127,
+    "drinking_water_source_piped_to_yard_plot": 0.03944667284799336,
+    "drinking_water_source_piped_into_dwelling": 0.1600964508014058,
+    "drinking_water_source_pond": 0.2997694145890473,
+    "drinking_water_source_protected_spring": 0.01431069190531242,
+    "drinking_water_source_protected_well": -0.02029705116605243,
+    "drinking_water_source_public_tap_standpipe": 0.0787811077359554,
+    "drinking_water_source_rain_harvested_water": 0.058143124840696,
+    "drinking_water_source_stream_river": 0.0002133343730641446,
+    "drinking_water_source_unprotected_spring": -0.009258934142334585,
+    "drinking_water_source_unprotected_well": 0.04245810625422647,
+    "drinking_water_source_water_vendor": 0.03148757459928886,
+    "toilet_facility_flush_to_bio_septic_tank": -0.07828269710056301,
+    "toilet_facility_flush_to_cess_pool": -0.04385319313418501,
+    "toilet_facility_flush_to_main_sewer": -0.00947393657030604,
+    "toilet_facility_flush_to_septic_tank": 0.06814172425395526,
+    "toilet_facility_open": -0.0394099591026873,
+    "toilet_facility_pit_latrine_uncovered": -0.0906922434489923,
+    "toilet_facility_pit_latrine_covered": -0.05658268834129032,
+    "toilet_facility_vip_pit_latrin": -0.02274669334557089,
+    "cooking_fuel_source_charcoal": 0.0259010202197314,
+    "cooking_fuel_source_electricity": 0.2402000333581882,
+    "cooking_fuel_source_firewood_and_products_of_wood": -0.02943944970716883,
+    "cooking_fuel_source_lpg_gas": 0.1863653651469512,
+    "cooking_fuel_source_other_specify": 0.206648899756551,
+    "cooking_fuel_source_paraffin": 0.01331115573395025,
+    "cooking_fuel_source_solar": 0.407924318913321,
+    "lighting_source_candle": -0.1172999105786021,
+    "lighting_source_electricity": 0.002271006550467192,
+    "lighting_source_fuel_wood": -0.5435328606600083,
+    "lighting_source_gas_lamp": -1.663455115348613e-16,
+    "lighting_source_generator_diesel_petrol": 0.1605674677030979,
+    "lighting_source_paraffin_lantern": -0.08764264051486581,
+    "lighting_source_paraffin_pressure_lamp": 0.1207291475446879,
+    "lighting_source_paraffin_tin_lamp": -0.1099001678765426,
+    "lighting_source_solar": -0.02111917054526602,
+    "lighting_source_torch_spot_light_dry_cells": -0.2406064149486482,
+    "lighting_source_torch_spotlight_solar_charged": -0.1213088184733691,
+    "access_electricity_yes": 0.09141409990546673,
+    "own_radio_yes": 0.03308832236231669,
+    "owns_tv_yes": 0.1027410954766874,
+    "own_landline_yes": 0.577961305735061,
+    "own_desktop_yes": 0.1276663145180434,
+    "own_laptop_yes": 0.08583357134098607,
+    "own_tablet_yes": 0.04625407384994423,
+    "own_fridge_yes": 0.1725028301719739,
+    "own_hometheatre_yes": 0.1782515753998324,
+    "own_phone_yes": 0.1415414523529224,
+    "own_mtcycle_yes": 0.0779927461335167,
+    "own_bicycle_yes": 0.06114081955948991,
+    "own_car_yes": 0.1824623781982829,
+    "owns_pickup_yes": 0.19411447489248,
+    "d1_wage_yes": -0.02436713607112406,
+    "d1_own_account_yes": 0.01537302946617558,
+    "d1_own_frm_yes": 0.1066354209325333,
+    "occupation_casual_labour": -0.02039741943317896,
+    "occupation_farmer": -0.07688693267723667,
+    "occupation_housekeeper": -0.04775536079609433,
+    "occupation_housewife": 4.071434836627752e-05,
+    "occupation_other": -0.008016995403957422,
+    "occupation_private_sector_worker": 0.01907896520624436,
+    "occupation_public_sector_worker": 0.05949884907747971,
+    "occupation_retired": 0.1245507790511956
+   },
+   "pvalue": {
+    "const": 1.031833164374656e-233,
+    "household_size": 2.584498273435131e-05,
+    "mm_age": 1.348486752252148e-21,
+    "prop_over65": 0.7481670040433629,
+    "prop_under5": 3.422675620042962e-09,
+    "prop_m1864": 0.1653171409683047,
+    "prop_w1864": 0.7346613176423602,
+    "nr_rooms": 7.203913158040688e-18,
+    "county_bomet": 0.0001900140340838365,
+    "county_bungoma": 0.2829962086667889,
+    "county_busia": 0.00141758944034232,
+    "county_elgeyo_marakwet": 5.167868512482688e-08,
+    "county_embu": 0.8598030401195778,
+    "county_garissa": 0.06214599458255768,
+    "county_homa_bay": 0.1929320027444412,
+    "county_isiolo": 0.9770098589292919,
+    "county_kajiado": 0.6294127337994001,
+    "county_kakamega": 0.8308892650615199,
+    "county_kericho": 0.9293192961902275,
+    "county_kiambu": 0.0631897915608366,
+    "county_kilifi": 0.8502652947936711,
+    "county_kirinyaga": 0.001169062032682856,
+    "county_kisii": 0.9994104085875958,
+    "county_kisumu": 0.7349161567481226,
+    "county_kitui": 0.1524186796148201,
+    "county_kwale": 5.660239064478555e-05,
+    "county_laikipia": 0.004663773927847095,
+    "county_lamu": 1.761272018089771e-09,
+    "county_machakos": 0.5695594518533715,
+    "county_makueni": 0.001113333826771122,
+    "county_mandera": 4.955789904983485e-10,
+    "county_marsabit": 1.612890474871866e-05,
+    "county_meru": 0.09205619157303495,
+    "county_migori": 0.08328996798582913,
+    "county_mombasa": 0.00284684602832413,
+    "county_muranga": 0.1133447492694347,
+    "county_nairobi": 0.02990548513225668,
+    "county_nakuru": 0.2920540169646517,
+    "county_nandi": 0.0001432799748520843,
+    "county_narok": 3.872178679326384e-09,
+    "county_nyamira": 0.02656540702762471,
+    "county_nyandarua": 0.002176002239861917,
+    "county_nyeri": 0.04821156258380647,
+    "county_samburu": 7.168738827778638e-06,
+    "county_siaya": 0.590264948596833,
+    "county_taita_taveta": 0.8634601859774638,
+    "county_tana_river": 0.006034308368086,
+    "county_tharaka_nithi": 0.002286096534896893,
+    "county_trans_nzoia": 0.262643259724205,
+    "county_turkana": 0.1211286662744592,
+    "county_uasin_gishu": 1.683655577943121e-05,
+    "county_vihiga": 0.005014517736726588,
+    "county_wajir": 0.522809959618569,
+    "county_west_pokot": 0.3153301598572641,
+    "hhhead_woman_male": 0.0879263378671563,
+    "working_yes": 0.008950681954948931,
+    "marital_status_living_together": 0.5557648615779152,
+    "marital_status_married_monogamous": 0.6556055898546804,
+    "marital_status_married_polygamous": 0.6683626517650697,
+    "marital_status_never_married": 0.09549292912084227,
+    "marital_status_separated": 0.1874276564096913,
+    "marital_status_widow_or_widower": 0.8641723011318694,
+    "education_level_informal_education_madrasa_adult_basic": 0.1857712264534092,
+    "education_level_middle_level_college_certificate_diploma": 3.733044360723727e-06,
+    "education_level_none": 0.6612329634209361,
+    "education_level_pre_primary": 0.6693775719728223,
+    "education_level_primary": 0.05599308205478756,
+    "education_level_secondary_level": 0.001412492200163587,
+    "education_level_university_post_graduate": 1.389896196156124e-06,
+    "education_level_universityundergraduate": 1.137085745380243e-11,
+    "education_level_vocational": 0.4930531702055946,
+    "dwelling_flat": 0.004862736794858972,
+    "dwelling_landie": 4.918236126758904e-10,
+    "dwelling_maisonnette": 0.09644653333647346,
+    "dwelling_manyatta_traditional_house": 0.002009397274368489,
+    "dwelling_other_specify": 0.2564459835083651,
+    "dwelling_shanty": 0.0002373955053571149,
+    "dwelling_swahili": 1.102630592627286e-06,
+    "ownership_dwelling_no_rent_with_consent_of_owner": 0.458636246687509,
+    "ownership_dwelling_owns": 0.5876456734027097,
+    "ownership_dwelling_pays_rent_lease": 0.4826356838346414,
+    "roof_material_canvas_nylon_cartons_cardboard": 0.9399540282101086,
+    "roof_material_concrete_cement": 0.5694595390375313,
+    "roof_material_dung__mud": 0.7284733946967,
+    "roof_material_grass__makuti_thatch_twigs": 0.9733887322572043,
+    "roof_material_iron_sheets_decra_versatile": 0.6349655412783013,
+    "roof_material_tiles": 0.08886639750573243,
+    "roof_material_tin_cans": 0.5590240635840007,
+    "wall_material_bricks": 0.7588671809055761,
+    "wall_material_cane_palm_trunks": 0.3183261366174608,
+    "wall_material_cement_blocks": 0.1918416315652863,
+    "wall_material_concrete_cement": 0.5229882686907041,
+    "wall_material_covered_adobe": 0.2791527711893188,
+    "wall_material_grass_reeds": 0.03088741499755623,
+    "wall_material_iron_sheets": 0.3860160172420009,
+    "wall_material_mud_cow_dung": 0.4808946072562582,
+    "wall_material_no_walls": 0.2584756852316327,
+    "wall_material_other": 0.6584359333081815,
+    "wall_material_plywood_cardboard": 0.5291818424366526,
+    "wall_material_precast_wall": 0.2228154620973579,
+    "wall_material_reused_wood": 0.9539234304613189,
+    "wall_material_stone_with_lime_cement": 0.6003901682336902,
+    "wall_material_stone_with_mud": 0.7709389821139829,
+    "wall_material_uncovered_adobe": 0.4902747775706713,
+    "wall_material_wood_planks_shingles_timber": 0.7702584520202439,
+    "floor_material_concrete_cement_terrazo": 3.931886906210261e-09,
+    "floor_material_dung": 0.0009490690252698988,
+    "floor_material_earth_sand": 1.325490619598447e-06,
+    "floor_material_palm_bamboo": 0.09572665427939703,
+    "floor_material_parquet_or_polished_wood": 0.2456032456583685,
+    "floor_material_vinyl_or_asphalt_strips": 0.8967354403288262,
+    "floor_material_wall_to_wall_carpet": 0.5342934460109825,
+    "floor_material_wood_planks_shingles_timber": 0.2689984875276095,
+    "drinking_water_source_bottled_water": 3.601111786318892e-05,
+    "drinking_water_source_dam": 0.0007671088620982501,
+    "drinking_water_source_lake": 0.5845003746280186,
+    "drinking_water_source_piped_to_yard_plot": 0.09700608387255959,
+    "drinking_water_source_piped_into_dwelling": 1.881524510680143e-09,
+    "drinking_water_source_pond": 0.2397792260422271,
+    "drinking_water_source_protected_spring": 0.7225467712392473,
+    "drinking_water_source_protected_well": 0.5180508558408072,
+    "drinking_water_source_public_tap_standpipe": 0.004678935334864644,
+    "drinking_water_source_rain_harvested_water": 0.1283458999291988,
+    "drinking_water_source_stream_river": 0.9950640101259196,
+    "drinking_water_source_unprotected_spring": 0.897815332656757,
+    "drinking_water_source_unprotected_well": 0.4075668904739012,
+    "drinking_water_source_water_vendor": 0.2379286459583312,
+    "toilet_facility_flush_to_bio_septic_tank": 0.5508631460067663,
+    "toilet_facility_flush_to_cess_pool": 0.6893791950088005,
+    "toilet_facility_flush_to_main_sewer": 0.9183064646239656,
+    "toilet_facility_flush_to_septic_tank": 0.4528431661448852,
+    "toilet_facility_open": 0.6948449984279194,
+    "toilet_facility_pit_latrine_uncovered": 0.3258815430007236,
+    "toilet_facility_pit_latrine_covered": 0.5254912393790807,
+    "toilet_facility_vip_pit_latrin": 0.8020815661259002,
+    "cooking_fuel_source_charcoal": 0.7493365669559913,
+    "cooking_fuel_source_electricity": 0.01428466397103166,
+    "cooking_fuel_source_firewood_and_products_of_wood": 0.7204895682293327,
+    "cooking_fuel_source_lpg_gas": 0.0206263651266696,
+    "cooking_fuel_source_other_specify": 0.0776957800323083,
+    "cooking_fuel_source_paraffin": 0.8731472273965195,
+    "cooking_fuel_source_solar": 0.1249676909271996,
+    "lighting_source_candle": 0.5197260790660977,
+    "lighting_source_electricity": 0.9908641418423944,
+    "lighting_source_fuel_wood": 0.00837406625894697,
+    "lighting_source_gas_lamp": 0.1094935364145244,
+    "lighting_source_generator_diesel_petrol": 0.6854395080457593,
+    "lighting_source_paraffin_lantern": 0.6259955760618956,
+    "lighting_source_paraffin_pressure_lamp": 0.6082086671488468,
+    "lighting_source_paraffin_tin_lamp": 0.5403062806896018,
+    "lighting_source_solar": 0.9048843192434085,
+    "lighting_source_torch_spot_light_dry_cells": 0.1905893713173719,
+    "lighting_source_torch_spotlight_solar_charged": 0.4985683338201043,
+    "access_electricity_yes": 0.3158894325365651,
+    "own_radio_yes": 0.01211913894055609,
+    "owns_tv_yes": 7.595267930773114e-14,
+    "own_landline_yes": 0.008479489883255949,
+    "own_desktop_yes": 0.02637183196517881,
+    "own_laptop_yes": 0.0003689813965386176,
+    "own_tablet_yes": 0.4324194813982537,
+    "own_fridge_yes": 1.230600921409203e-15,
+    "own_hometheatre_yes": 8.06579959918551e-08,
+    "own_phone_yes": 6.894147447749254e-14,
+    "own_mtcycle_yes": 0.006435039662238153,
+    "own_bicycle_yes": 0.02216111818554442,
+    "own_car_yes": 2.343495706037286e-09,
+    "owns_pickup_yes": 0.07191178955732476,
+    "d1_wage_yes": 0.4329043485770956,
+    "d1_own_account_yes": 0.4946377701161847,
+    "d1_own_frm_yes": 0.0134996415073106,
+    "occupation_casual_labour": 0.6222011046939542,
+    "occupation_farmer": 0.04636634799582167,
+    "occupation_housekeeper": 0.3356877211890326,
+    "occupation_housewife": 0.9993087046651279,
+    "occupation_other": 0.8130830467490722,
+    "occupation_private_sector_worker": 0.613268334613345,
+    "occupation_public_sector_worker": 0.1276553438520764,
+    "occupation_retired": 0.01404811382647527
+   },
+   "r2_train": 0.6587126495232603
+  },
+  "rural": {
+   "coef": {
+    "const": 9.078867996669882,
+    "household_size": -0.01642014146799796,
+    "mm_age": -0.1433608362963874,
+    "prop_over65": -0.120902564545949,
+    "prop_under5": 0.2952865706275524,
+    "prop_m1864": -0.03447339147179354,
+    "prop_w1864": -0.06251886974067894,
+    "nr_rooms": 0.03909715135038583,
+    "county_bomet": -0.1085205579423367,
+    "county_bungoma": -0.01819821480070333,
+    "county_busia": -0.2602737772548799,
+    "county_elgeyo_marakwet": -0.1022872996509389,
+    "county_embu": -0.01134937364962862,
+    "county_garissa": 0.03808602005765889,
+    "county_homa_bay": 0.05434327474495557,
+    "county_isiolo": -0.02392952610237503,
+    "county_kajiado": -0.001134462699452748,
+    "county_kakamega": 0.05749023366621087,
+    "county_kericho": -0.1237955989620629,
+    "county_kiambu": -0.02113328367564232,
+    "county_kilifi": 0.0663719007267553,
+    "county_kirinyaga": -0.0774376192047595,
+    "county_kisii": -0.08826693149703052,
+    "county_kisumu": 0.02981146095744336,
+    "county_kitui": -0.08867477035345486,
+    "county_kwale": 0.0006131952452879119,
+    "county_laikipia": -0.05859285340085318,
+    "county_lamu": -0.05335667933594745,
+    "county_machakos": -0.05055250021933091,
+    "county_makueni": -0.187010736787309,
+    "county_mandera": 0.1063276048440872,
+    "county_marsabit": 0.109321491201978,
+    "county_meru": 0.04371904691432565,
+    "county_migori": 0.0778787498611177,
+    "county_mombasa": 6.366960313291117e-17,
+    "county_muranga": 0.03066056919566193,
+    "county_nairobi": 9.038974963263221e-16,
+    "county_nakuru": -0.061496172154478,
+    "county_nandi": -0.01097531260624582,
+    "county_narok": 0.306889836227413,
+    "county_nyamira": -0.1658388340314146,
+    "county_nyandarua": -0.1965744475659478,
+    "county_nyeri": -0.008238271163711175,
+    "county_samburu": -0.279284131393481,
+    "county_siaya": -0.07038359930280813,
+    "county_taita_taveta": 0.05207031245940388,
+    "county_tana_river": -0.05127642135230116,
+    "county_tharaka_nithi": 0.08573137803548225,
+    "county_trans_nzoia": -0.08551601578495849,
+    "county_turkana": -0.3583987006984224,
+    "county_uasin_gishu": -0.2610711098489793,
+    "county_vihiga": -0.1541562823925915,
+    "county_wajir": 0.1453830820079917,
+    "county_west_pokot": -0.1825238362653023,
+    "hhhead_woman_male": -0.006498572978754974,
+    "working_yes": 0.1134035470034454,
+    "marital_status_living_together": 0.07145730803322614,
+    "marital_status_married_monogamous": -0.06322663388884073,
+    "marital_status_married_polygamous": -0.05408021667164295,
+    "marital_status_never_married": -0.0746443678626646,
+    "marital_status_separated": -0.05502229763731531,
+    "marital_status_widow_or_widower": -0.06740349911852359,
+    "education_level_informal_education_madrasa_adult_basic": -0.04395395483331188,
+    "education_level_middle_level_college_certificate_diploma": 0.1877666848239261,
+    "education_level_none": 0.04876537978482132,
+    "education_level_pre_primary": 0.1055713683530425,
+    "education_level_primary": 0.01880360278619134,
+    "education_level_secondary_level": 0.09293207056158409,
+    "education_level_university_post_graduate": 0.3132286362028531,
+    "education_level_universityundergraduate": 0.21398808618646,
+    "education_level_vocational": 0.09896522025495585,
+    "dwelling_flat": -0.07487166583780258,
+    "dwelling_landie": -0.03180621861473251,
+    "dwelling_maisonnette": -0.007897295689165917,
+    "dwelling_manyatta_traditional_house": 0.01246479799280123,
+    "dwelling_other_specify": -6.139369770111441e-16,
+    "dwelling_shanty": -0.105049915704745,
+    "dwelling_swahili": -0.03638793035876603,
+    "ownership_dwelling_no_rent_with_consent_of_owner": 0.038032690275417,
+    "ownership_dwelling_owns": 0.1635997418084801,
+    "ownership_dwelling_pays_rent_lease": 0.09044652963084121,
+    "roof_material_canvas_nylon_cartons_cardboard": 0.07957264789893714,
+    "roof_material_concrete_cement": -0.162808655565156,
+    "roof_material_dung__mud": -0.06790711263483717,
+    "roof_material_grass__makuti_thatch_twigs": -0.07428797311785723,
+    "roof_material_iron_sheets_decra_versatile": -0.07440501820805778,
+    "roof_material_tiles": -0.03966407241984582,
+    "roof_material_tin_cans": -0.02573210097088685,
+    "wall_material_bricks": 0.02590692755197346,
+    "wall_material_cane_palm_trunks": -0.01119494068366916,
+    "wall_material_cement_blocks": -0.008738509535867328,
+    "wall_material_concrete_cement": 0.06597706588087493,
+    "wall_material_covered_adobe": 0.0680668749499368,
+    "wall_material_grass_reeds": -0.1266768807894427,
+    "wall_material_iron_sheets": 0.04484285081152156,
+    "wall_material_mud_cow_dung": 0.007361218708540229,
+    "wall_material_no_walls": -0.2050675130883246,
+    "wall_material_other": 6.107067230381481e-16,
+    "wall_material_plywood_cardboard": -0.09636963869669612,
+    "wall_material_precast_wall": 0.0469887863202415,
+    "wall_material_reused_wood": -0.1344592810276098,
+    "wall_material_stone_with_lime_cement": 0.06385900889296768,
+    "wall_material_stone_with_mud": 0.0188950132199289,
+    "wall_material_uncovered_adobe": 0.04971608285853563,
+    "wall_material_wood_planks_shingles_timber": 0.07237254698617568,
+    "floor_material_concrete_cement_terrazo": -0.121935904540261,
+    "floor_material_dung": -0.1487264203650521,
+    "floor_material_earth_sand": -0.2390303749988106,
+    "floor_material_palm_bamboo": -0.3287434222627692,
+    "floor_material_parquet_or_polished_wood": -0.2474056982446182,
+    "floor_material_vinyl_or_asphalt_strips": 0.02325495857583459,
+    "floor_material_wall_to_wall_carpet": -0.1465229151076711,
+    "floor_material_wood_planks_shingles_timber": -0.1496079080127093,
+    "drinking_water_source_bottled_water": 0.2251880908155064,
+    "drinking_water_source_dam": -0.04173747379316486,
+    "drinking_water_source_lake": 0.02528023835072582,
+    "drinking_water_source_piped_to_yard_plot": 0.05679994609260833,
+    "drinking_water_source_piped_into_dwelling": 0.06500163613177892,
+    "drinking_water_source_pond": -0.07472785479252697,
+    "drinking_water_source_protected_spring": -0.005605304769578517,
+    "drinking_water_source_protected_well": -0.04403353776880899,
+    "drinking_water_source_public_tap_standpipe": -0.01579736073917987,
+    "drinking_water_source_rain_harvested_water": -0.0001848161662593335,
+    "drinking_water_source_stream_river": -0.008993638042058869,
+    "drinking_water_source_unprotected_spring": -0.03973199299803722,
+    "drinking_water_source_unprotected_well": -0.03485836181760651,
+    "drinking_water_source_water_vendor": 0.009725926380760863,
+    "toilet_facility_flush_to_bio_septic_tank": -0.0218679749430748,
+    "toilet_facility_flush_to_cess_pool": 0.3458975781971387,
+    "toilet_facility_flush_to_main_sewer": 0.2551861906233155,
+    "toilet_facility_flush_to_septic_tank": 0.05552981315125338,
+    "toilet_facility_open": -0.0999944363619889,
+    "toilet_facility_pit_latrine_uncovered": -0.02639744269815281,
+    "toilet_facility_pit_latrine_covered": 0.006616748326038424,
+    "toilet_facility_vip_pit_latrin": 0.06055559704118285,
+    "cooking_fuel_source_charcoal": -0.07561998026391148,
+    "cooking_fuel_source_electricity": -0.151241480566616,
+    "cooking_fuel_source_firewood_and_products_of_wood": -0.1717807956989726,
+    "cooking_fuel_source_lpg_gas": 0.03607892112123845,
+    "cooking_fuel_source_other_specify": -0.1177076991516766,
+    "cooking_fuel_source_paraffin": -0.2036131755776811,
+    "cooking_fuel_source_solar": -0.2198620309590426,
+    "lighting_source_candle": -0.006284471644558823,
+    "lighting_source_electricity": -0.1071634046544801,
+    "lighting_source_fuel_wood": -0.1974600157886696,
+    "lighting_source_gas_lamp": 0.2909101105137526,
+    "lighting_source_generator_diesel_petrol": 4.106777529770773e-16,
+    "lighting_source_paraffin_lantern": -0.03269346480431057,
+    "lighting_source_paraffin_pressure_lamp": -0.1255157008033311,
+    "lighting_source_paraffin_tin_lamp": -0.02767817268048937,
+    "lighting_source_solar": 0.01166888798544619,
+    "lighting_source_torch_spot_light_dry_cells": -0.07960096593746752,
+    "lighting_source_torch_spotlight_solar_charged": -0.04032211546640575,
+    "access_electricity_yes": 0.149065711154705,
+    "own_radio_yes": 0.07708304608528649,
+    "owns_tv_yes": 0.1176917038429844,
+    "own_landline_yes": -0.0814184359646214,
+    "own_desktop_yes": 0.02145719154251813,
+    "own_laptop_yes": 0.1700522892574586,
+    "own_tablet_yes": 0.1029898369187705,
+    "own_fridge_yes": 0.141087023761514,
+    "own_hometheatre_yes": 0.08674758988992792,
+    "own_phone_yes": 0.163193530368337,
+    "own_mtcycle_yes": 0.1500274837648011,
+    "own_bicycle_yes": 0.04365595294702015,
+    "own_car_yes": 0.2438133758799592,
+    "owns_pickup_yes": 0.1819713050288761,
+    "d1_wage_yes": -0.02187366158038816,
+    "d1_own_account_yes": 0.02713002509648013,
+    "d1_own_frm_yes": 0.009685212469880258,
+    "occupation_casual_labour": -0.04323112548477513,
+    "occupation_farmer": -0.08018482309092473,
+    "occupation_housekeeper": -0.0573529983800532,
+    "occupation_housewife": 0.009492647875530225,
+    "occupation_other": -0.01623582057654249,
+    "occupation_private_sector_worker": 0.05289968874542633,
+    "occupation_public_sector_worker": 0.03421878748742646,
+    "occupation_retired": 0.0468659462474858
+   },
+   "pvalue": {
+    "const": 4.236723458089599e-237,
+    "household_size": 5.919963814342478e-05,
+    "mm_age": 2.654702086193585e-16,
+    "prop_over65": 6.692750616421076e-05,
+    "prop_under5": 1.727904170558979e-18,
+    "prop_m1864": 0.1912644753415628,
+    "prop_w1864": 0.03966024922086657,
+    "nr_rooms": 4.98792442379433e-13,
+    "county_bomet": 0.007541839395561132,
+    "county_bungoma": 0.6685425013591932,
+    "county_busia": 9.963763322935158e-10,
+    "county_elgeyo_marakwet": 0.01145869021946711,
+    "county_embu": 0.7787143463409993,
+    "county_garissa": 0.5467208181680222,
+    "county_homa_bay": 0.1771923123996223,
+    "county_isiolo": 0.6720766783616865,
+    "county_kajiado": 0.9811010644858488,
+    "county_kakamega": 0.1623486897572771,
+    "county_kericho": 0.002253053703591957,
+    "county_kiambu": 0.634480742233759,
+    "county_kilifi": 0.1255569680591234,
+    "county_kirinyaga": 0.07149954029531971,
+    "county_kisii": 0.04284764783503789,
+    "county_kisumu": 0.4803899635182667,
+    "county_kitui": 0.03456244743449882,
+    "county_kwale": 0.988773828073648,
+    "county_laikipia": 0.1596546730628419,
+    "county_lamu": 0.2321221214387575,
+    "county_machakos": 0.2546128360996781,
+    "county_makueni": 7.972866848592897e-06,
+    "county_mandera": 0.07729938054213215,
+    "county_marsabit": 0.06436030397265186,
+    "county_meru": 0.290358756730109,
+    "county_migori": 0.07664881599224556,
+    "county_mombasa": 0.9963573232628083,
+    "county_muranga": 0.4487857526538103,
+    "county_nairobi": 0.9383986140929854,
+    "county_nakuru": 0.156712211779775,
+    "county_nandi": 0.788113537892628,
+    "county_narok": 4.859552000831723e-13,
+    "county_nyamira": 0.0001240553749279992,
+    "county_nyandarua": 1.978976274574967e-06,
+    "county_nyeri": 0.8448871095686338,
+    "county_samburu": 2.290268430986966e-08,
+    "county_siaya": 0.08697664696870253,
+    "county_taita_taveta": 0.2617057302228972,
+    "county_tana_river": 0.3130783385608447,
+    "county_tharaka_nithi": 0.03074099552422503,
+    "county_trans_nzoia": 0.05079724281177005,
+    "county_turkana": 1.017535483762518e-11,
+    "county_uasin_gishu": 5.363017771367259e-09,
+    "county_vihiga": 0.0002801109946877993,
+    "county_wajir": 0.02854537938452846,
+    "county_west_pokot": 1.32128120991784e-05,
+    "hhhead_woman_male": 0.6163534090219853,
+    "working_yes": 1.280761860543426e-06,
+    "marital_status_living_together": 0.4379969624933393,
+    "marital_status_married_monogamous": 0.1012880314292767,
+    "marital_status_married_polygamous": 0.1916178759891469,
+    "marital_status_never_married": 0.07952826661916929,
+    "marital_status_separated": 0.1851997000902658,
+    "marital_status_widow_or_widower": 0.08596085696332044,
+    "education_level_informal_education_madrasa_adult_basic": 0.4890788219527878,
+    "education_level_middle_level_college_certificate_diploma": 1.903624485364117e-14,
+    "education_level_none": 0.8292167854234039,
+    "education_level_pre_primary": 0.2560352083160244,
+    "education_level_primary": 0.1993599305162453,
+    "education_level_secondary_level": 9.710858812927455e-08,
+    "education_level_university_post_graduate": 0.00317285594413666,
+    "education_level_universityundergraduate": 3.8688438108554e-08,
+    "education_level_vocational": 0.0183454650391257,
+    "dwelling_flat": 0.1379709994866838,
+    "dwelling_landie": 0.1989814293044149,
+    "dwelling_maisonnette": 0.8777025451717263,
+    "dwelling_manyatta_traditional_house": 0.6330949010726872,
+    "dwelling_other_specify": 0.004923554397996514,
+    "dwelling_shanty": 0.002795090845674212,
+    "dwelling_swahili": 0.145577329985581,
+    "ownership_dwelling_no_rent_with_consent_of_owner": 0.5964631763662223,
+    "ownership_dwelling_owns": 0.01678878918106065,
+    "ownership_dwelling_pays_rent_lease": 0.1991740420503372,
+    "roof_material_canvas_nylon_cartons_cardboard": 0.4305871048620354,
+    "roof_material_concrete_cement": 0.1234098523107436,
+    "roof_material_dung__mud": 0.4895700524854778,
+    "roof_material_grass__makuti_thatch_twigs": 0.4207355852737763,
+    "roof_material_iron_sheets_decra_versatile": 0.403156262960361,
+    "roof_material_tiles": 0.828507976465863,
+    "roof_material_tin_cans": 0.915677143840602,
+    "wall_material_bricks": 0.3521170826271799,
+    "wall_material_cane_palm_trunks": 0.7809773581357592,
+    "wall_material_cement_blocks": 0.8805909810737421,
+    "wall_material_concrete_cement": 0.01441238865256204,
+    "wall_material_covered_adobe": 0.09166086541884572,
+    "wall_material_grass_reeds": 0.006094422741145764,
+    "wall_material_iron_sheets": 0.1558030248987965,
+    "wall_material_mud_cow_dung": 0.75610227262216,
+    "wall_material_no_walls": 0.008708222973948871,
+    "wall_material_other": 0.05056035514557648,
+    "wall_material_plywood_cardboard": 0.2859156983001616,
+    "wall_material_precast_wall": 0.5688185972555515,
+    "wall_material_reused_wood": 0.1035043219993446,
+    "wall_material_stone_with_lime_cement": 0.02850096391786367,
+    "wall_material_stone_with_mud": 0.6404478723543617,
+    "wall_material_uncovered_adobe": 0.3333914777521708,
+    "wall_material_wood_planks_shingles_timber": 0.00854436227737723,
+    "floor_material_concrete_cement_terrazo": 4.369820960085012e-08,
+    "floor_material_dung": 4.621142155672613e-08,
+    "floor_material_earth_sand": 8.894777168717165e-21,
+    "floor_material_palm_bamboo": 0.2409834983935779,
+    "floor_material_parquet_or_polished_wood": 0.3762122127301556,
+    "floor_material_vinyl_or_asphalt_strips": 0.8198516036292063,
+    "floor_material_wall_to_wall_carpet": 0.05192455948396661,
+    "floor_material_wood_planks_shingles_timber": 0.1010073155793005,
+    "drinking_water_source_bottled_water": 0.07617427857218091,
+    "drinking_water_source_dam": 0.1675188812368749,
+    "drinking_water_source_lake": 0.5212643491051802,
+    "drinking_water_source_piped_to_yard_plot": 0.002048845887731887,
+    "drinking_water_source_piped_into_dwelling": 0.03201860459551381,
+    "drinking_water_source_pond": 0.1012302397066684,
+    "drinking_water_source_protected_spring": 0.795352424622382,
+    "drinking_water_source_protected_well": 0.02957199134595114,
+    "drinking_water_source_public_tap_standpipe": 0.4592478536231495,
+    "drinking_water_source_rain_harvested_water": 0.9927819673359404,
+    "drinking_water_source_stream_river": 0.5610293396393584,
+    "drinking_water_source_unprotected_spring": 0.1106778477630717,
+    "drinking_water_source_unprotected_well": 0.1616471345924096,
+    "drinking_water_source_water_vendor": 0.6989711725733316,
+    "toilet_facility_flush_to_bio_septic_tank": 0.9296609264541547,
+    "toilet_facility_flush_to_cess_pool": 0.1050916817537361,
+    "toilet_facility_flush_to_main_sewer": 0.2272851878156475,
+    "toilet_facility_flush_to_septic_tank": 0.7802264979011551,
+    "toilet_facility_open": 0.6120367323850371,
+    "toilet_facility_pit_latrine_uncovered": 0.8932128922419609,
+    "toilet_facility_pit_latrine_covered": 0.973115058805424,
+    "toilet_facility_vip_pit_latrin": 0.7582792262676887,
+    "cooking_fuel_source_charcoal": 0.4672095304054533,
+    "cooking_fuel_source_electricity": 0.2500978145119687,
+    "cooking_fuel_source_firewood_and_products_of_wood": 0.0941806898688437,
+    "cooking_fuel_source_lpg_gas": 0.7282446607353998,
+    "cooking_fuel_source_other_specify": 0.4545972296178581,
+    "cooking_fuel_source_paraffin": 0.0790403650919453,
+    "cooking_fuel_source_solar": 0.0753145917404012,
+    "lighting_source_candle": 0.9317762665012894,
+    "lighting_source_electricity": 0.1485329416141049,
+    "lighting_source_fuel_wood": 0.002590984666923179,
+    "lighting_source_gas_lamp": 0.475902267631151,
+    "lighting_source_generator_diesel_petrol": 0.0008272317241381861,
+    "lighting_source_paraffin_lantern": 0.5779943492001699,
+    "lighting_source_paraffin_pressure_lamp": 0.1848825703533637,
+    "lighting_source_paraffin_tin_lamp": 0.6288850390837355,
+    "lighting_source_solar": 0.8332545307690135,
+    "lighting_source_torch_spot_light_dry_cells": 0.1820498236190699,
+    "lighting_source_torch_spotlight_solar_charged": 0.4753062122597437,
+    "access_electricity_yes": 0.003011009242281776,
+    "own_radio_yes": 1.472944004005025e-16,
+    "owns_tv_yes": 4.183187996177479e-23,
+    "own_landline_yes": 0.8352386629082451,
+    "own_desktop_yes": 0.7876957122289938,
+    "own_laptop_yes": 4.179475537466397e-06,
+    "own_tablet_yes": 0.2815171118035836,
+    "own_fridge_yes": 4.738164262972085e-05,
+    "own_hometheatre_yes": 0.1458358077145724,
+    "own_phone_yes": 9.311495830766827e-33,
+    "own_mtcycle_yes": 4.788331291626125e-18,
+    "own_bicycle_yes": 0.0146642005186985,
+    "own_car_yes": 1.296822672071625e-13,
+    "owns_pickup_yes": 0.03080226039860481,
+    "d1_wage_yes": 0.2416285834383815,
+    "d1_own_account_yes": 0.02631289679302422,
+    "d1_own_frm_yes": 0.5597789177067702,
+    "occupation_casual_labour": 0.161477692985352,
+    "occupation_farmer": 1.638421556034106e-05,
+    "occupation_housekeeper": 0.2664113355568441,
+    "occupation_housewife": 0.7621583820620927,
+    "occupation_other": 0.428334342772888,
+    "occupation_private_sector_worker": 0.1472973799841555,
+    "occupation_public_sector_worker": 0.2653500157396241,
+    "occupation_retired": 0.175777796790598
+   },
+   "r2_train": 0.4585242555805539
+  }
+ },
+ "exclusion_regression": [
+  {
+   "term": "household_size",
+   "label": "Household size",
+   "pp": -0.62,
+   "p": 0.264522069,
+   "sig": "insig"
+  },
+  {
+   "term": "mm_age",
+   "label": "Ages of household members",
+   "pp": -8.34,
+   "p": 0.000267592,
+   "sig": "***"
+  },
+  {
+   "term": "prop_over65",
+   "label": "Share of people aged 65+",
+   "pp": -7.85,
+   "p": 0.067716639,
+   "sig": "insig"
+  },
+  {
+   "term": "prop_under5",
+   "label": "Share of young children (5 and under)",
+   "pp": 12.01,
+   "p": 0.007017469,
+   "sig": "**"
+  },
+  {
+   "term": "prop_m1864",
+   "label": "Share of working-age men",
+   "pp": 3.4,
+   "p": 0.349644657,
+   "sig": "insig"
+  },
+  {
+   "term": "prop_w1864",
+   "label": "Share of working-age women",
+   "pp": -0.74,
+   "p": 0.846805016,
+   "sig": "insig"
+  },
+  {
+   "term": "nr_rooms",
+   "label": "Number of sleeping rooms",
+   "pp": 1.86,
+   "p": 0.01408021,
+   "sig": "*"
+  },
+  {
+   "term": "county_bomet",
+   "label": "County: Bomet",
+   "pp": 0.94,
+   "p": 0.874113522,
+   "sig": "insig"
+  },
+  {
+   "term": "county_bungoma",
+   "label": "County: Bungoma",
+   "pp": 5.0,
+   "p": 0.389036795,
+   "sig": "insig"
+  },
+  {
+   "term": "county_busia",
+   "label": "County: Busia",
+   "pp": -14.5,
+   "p": 0.00938697,
+   "sig": "**"
+  },
+  {
+   "term": "county_elgeyo_marakwet",
+   "label": "County: Elgeyo Marakwet",
+   "pp": -9.9,
+   "p": 0.079733603,
+   "sig": "insig"
+  },
+  {
+   "term": "county_embu",
+   "label": "County: Embu",
+   "pp": 3.92,
+   "p": 0.446361313,
+   "sig": "insig"
+  },
+  {
+   "term": "county_garissa",
+   "label": "County: Garissa",
+   "pp": 3.54,
+   "p": 0.617327131,
+   "sig": "insig"
+  },
+  {
+   "term": "county_homa_bay",
+   "label": "County: Homa Bay",
+   "pp": -4.05,
+   "p": 0.453936837,
+   "sig": "insig"
+  },
+  {
+   "term": "county_isiolo",
+   "label": "County: Isiolo",
+   "pp": -2.11,
+   "p": 0.740315209,
+   "sig": "insig"
+  },
+  {
+   "term": "county_kajiado",
+   "label": "County: Kajiado",
+   "pp": 1.95,
+   "p": 0.722741624,
+   "sig": "insig"
+  },
+  {
+   "term": "county_kakamega",
+   "label": "County: Kakamega",
+   "pp": 4.41,
+   "p": 0.409376386,
+   "sig": "insig"
+  },
+  {
+   "term": "county_kericho",
+   "label": "County: Kericho",
+   "pp": -12.48,
+   "p": 0.020895941,
+   "sig": "*"
+  },
+  {
+   "term": "county_kiambu",
+   "label": "County: Kiambu",
+   "pp": 8.34,
+   "p": 0.120377219,
+   "sig": "insig"
+  },
+  {
+   "term": "county_kilifi",
+   "label": "County: Kilifi",
+   "pp": 12.48,
+   "p": 0.017175026,
+   "sig": "*"
+  },
+  {
+   "term": "county_kirinyaga",
+   "label": "County: Kirinyaga",
+   "pp": -7.16,
+   "p": 0.18222471,
+   "sig": "insig"
+  },
+  {
+   "term": "county_kisii",
+   "label": "County: Kisii",
+   "pp": -7.2,
+   "p": 0.20946883,
+   "sig": "insig"
+  },
+  {
+   "term": "county_kisumu",
+   "label": "County: Kisumu",
+   "pp": 1.23,
+   "p": 0.825217897,
+   "sig": "insig"
+  },
+  {
+   "term": "county_kitui",
+   "label": "County: Kitui",
+   "pp": 2.45,
+   "p": 0.669509384,
+   "sig": "insig"
+  },
+  {
+   "term": "county_kwale",
+   "label": "County: Kwale",
+   "pp": 14.68,
+   "p": 0.007190212,
+   "sig": "**"
+  },
+  {
+   "term": "county_laikipia",
+   "label": "County: Laikipia",
+   "pp": -5.27,
+   "p": 0.321092301,
+   "sig": "insig"
+  },
+  {
+   "term": "county_lamu",
+   "label": "County: Lamu",
+   "pp": 2.68,
+   "p": 0.641035299,
+   "sig": "insig"
+  },
+  {
+   "term": "county_machakos",
+   "label": "County: Machakos",
+   "pp": -0.65,
+   "p": 0.904066433,
+   "sig": "insig"
+  },
+  {
+   "term": "county_makueni",
+   "label": "County: Makueni",
+   "pp": -14.58,
+   "p": 0.008983847,
+   "sig": "**"
+  },
+  {
+   "term": "county_mandera",
+   "label": "County: Mandera",
+   "pp": 16.24,
+   "p": 0.027470737,
+   "sig": "*"
+  },
+  {
+   "term": "county_marsabit",
+   "label": "County: Marsabit",
+   "pp": 10.33,
+   "p": 0.12114355,
+   "sig": "insig"
+  },
+  {
+   "term": "county_meru",
+   "label": "County: Meru",
+   "pp": 3.14,
+   "p": 0.55810694,
+   "sig": "insig"
+  },
+  {
+   "term": "county_migori",
+   "label": "County: Migori",
+   "pp": 9.38,
+   "p": 0.120206732,
+   "sig": "insig"
+  },
+  {
+   "term": "county_mombasa",
+   "label": "County: Mombasa",
+   "pp": 14.08,
+   "p": 0.024870064,
+   "sig": "*"
+  },
+  {
+   "term": "county_muranga",
+   "label": "County: Murang'a",
+   "pp": 0.08,
+   "p": 0.987540386,
+   "sig": "insig"
+  },
+  {
+   "term": "county_nairobi",
+   "label": "County: Nairobi",
+   "pp": 4.64,
+   "p": 0.425681224,
+   "sig": "insig"
+  },
+  {
+   "term": "county_nakuru",
+   "label": "County: Nakuru",
+   "pp": 7.63,
+   "p": 0.169407639,
+   "sig": "insig"
+  },
+  {
+   "term": "county_nandi",
+   "label": "County: Nandi",
+   "pp": 6.28,
+   "p": 0.237720848,
+   "sig": "insig"
+  },
+  {
+   "term": "county_narok",
+   "label": "County: Narok",
+   "pp": 10.14,
+   "p": 0.082351323,
+   "sig": "insig"
+  },
+  {
+   "term": "county_nyamira",
+   "label": "County: Nyamira",
+   "pp": -5.8,
+   "p": 0.317393548,
+   "sig": "insig"
+  },
+  {
+   "term": "county_nyandarua",
+   "label": "County: Nyandarua",
+   "pp": -3.61,
+   "p": 0.502952829,
+   "sig": "insig"
+  },
+  {
+   "term": "county_nyeri",
+   "label": "County: Nyeri",
+   "pp": -3.8,
+   "p": 0.478492045,
+   "sig": "insig"
+  },
+  {
+   "term": "county_samburu",
+   "label": "County: Samburu",
+   "pp": -8.21,
+   "p": 0.180923419,
+   "sig": "insig"
+  },
+  {
+   "term": "county_siaya",
+   "label": "County: Siaya",
+   "pp": -0.24,
+   "p": 0.963803344,
+   "sig": "insig"
+  },
+  {
+   "term": "county_taita_taveta",
+   "label": "County: Taita Taveta",
+   "pp": 7.2,
+   "p": 0.211288316,
+   "sig": "insig"
+  },
+  {
+   "term": "county_tana_river",
+   "label": "County: Tana River",
+   "pp": -7.47,
+   "p": 0.253364215,
+   "sig": "insig"
+  },
+  {
+   "term": "county_tharaka_nithi",
+   "label": "County: Tharaka Nithi",
+   "pp": -2.07,
+   "p": 0.686750992,
+   "sig": "insig"
+  },
+  {
+   "term": "county_trans_nzoia",
+   "label": "County: Trans Nzoia",
+   "pp": 1.41,
+   "p": 0.794902386,
+   "sig": "insig"
+  },
+  {
+   "term": "county_turkana",
+   "label": "County: Turkana",
+   "pp": -15.78,
+   "p": 0.019115357,
+   "sig": "*"
+  },
+  {
+   "term": "county_uasin_gishu",
+   "label": "County: Uasin Gishu",
+   "pp": -10.02,
+   "p": 0.061576975,
+   "sig": "insig"
+  },
+  {
+   "term": "county_vihiga",
+   "label": "County: Vihiga",
+   "pp": -5.65,
+   "p": 0.284205281,
+   "sig": "insig"
+  },
+  {
+   "term": "county_wajir",
+   "label": "County: Wajir",
+   "pp": 6.75,
+   "p": 0.393531411,
+   "sig": "insig"
+  },
+  {
+   "term": "county_west_pokot",
+   "label": "County: West Pokot",
+   "pp": -14.29,
+   "p": 0.014109559,
+   "sig": "*"
+  },
+  {
+   "term": "hhhead_woman_male",
+   "label": "Sex of household head: Man",
+   "pp": -2.77,
+   "p": 0.136206536,
+   "sig": "insig"
+  },
+  {
+   "term": "working_yes",
+   "label": "Head worked last week",
+   "pp": 2.23,
+   "p": 0.339581017,
+   "sig": "insig"
+  },
+  {
+   "term": "marital_status_living_together",
+   "label": "Marital status of head: Living together",
+   "pp": 8.78,
+   "p": 0.436134829,
+   "sig": "insig"
+  },
+  {
+   "term": "marital_status_married_monogamous",
+   "label": "Marital status of head: Married monogamous",
+   "pp": -1.79,
+   "p": 0.712056797,
+   "sig": "insig"
+  },
+  {
+   "term": "marital_status_married_polygamous",
+   "label": "Marital status of head: Married polygamous",
+   "pp": 0.33,
+   "p": 0.951789773,
+   "sig": "insig"
+  },
+  {
+   "term": "marital_status_never_married",
+   "label": "Marital status of head: Never married",
+   "pp": 1.36,
+   "p": 0.793589603,
+   "sig": "insig"
+  },
+  {
+   "term": "marital_status_separated",
+   "label": "Marital status of head: Separated",
+   "pp": -0.23,
+   "p": 0.964358001,
+   "sig": "insig"
+  },
+  {
+   "term": "marital_status_widow_or_widower",
+   "label": "Marital status of head: Widow or widower",
+   "pp": 0.84,
+   "p": 0.864770389,
+   "sig": "insig"
+  },
+  {
+   "term": "education_level_informal_education_madrasa_adult_basic",
+   "label": "Education of head: Informal (madrasa/adult basic)",
+   "pp": 7.82,
+   "p": 0.320565126,
+   "sig": "insig"
+  },
+  {
+   "term": "education_level_middle_level_college_certificate_diploma",
+   "label": "Education of head: College (certificate/diploma)",
+   "pp": 7.48,
+   "p": 0.012126644,
+   "sig": "*"
+  },
+  {
+   "term": "education_level_none",
+   "label": "Education of head: Missing",
+   "pp": 17.21,
+   "p": 0.355767972,
+   "sig": "insig"
+  },
+  {
+   "term": "education_level_pre_primary",
+   "label": "Education of head: Pre-primary",
+   "pp": 13.09,
+   "p": 0.412211821,
+   "sig": "insig"
+  },
+  {
+   "term": "education_level_primary",
+   "label": "Education of head: Primary",
+   "pp": 4.98,
+   "p": 0.016214529,
+   "sig": "*"
+  },
+  {
+   "term": "education_level_secondary_level",
+   "label": "Education of head: Secondary",
+   "pp": 8.94,
+   "p": 0.000156183,
+   "sig": "***"
+  },
+  {
+   "term": "education_level_university_post_graduate",
+   "label": "Education of head: University (postgraduate)",
+   "pp": 22.05,
+   "p": 0.02086576,
+   "sig": "*"
+  },
+  {
+   "term": "education_level_universityundergraduate",
+   "label": "Education of head: University (undergraduate)",
+   "pp": 14.04,
+   "p": 0.000381396,
+   "sig": "***"
+  },
+  {
+   "term": "education_level_vocational",
+   "label": "Education of head: Vocational",
+   "pp": 3.92,
+   "p": 0.502504388,
+   "sig": "insig"
+  },
+  {
+   "term": "dwelling_flat",
+   "label": "Type of house: Flat",
+   "pp": -6.35,
+   "p": 0.089563215,
+   "sig": "insig"
+  },
+  {
+   "term": "dwelling_landie",
+   "label": "Type of house: Landie (row of rooms)",
+   "pp": -8.16,
+   "p": 0.001222402,
+   "sig": "**"
+  },
+  {
+   "term": "dwelling_maisonnette",
+   "label": "Type of house: Maisonnette",
+   "pp": -9.27,
+   "p": 0.096084327,
+   "sig": "insig"
+  },
+  {
+   "term": "dwelling_manyatta_traditional_house",
+   "label": "Type of house: Manyatta/traditional house",
+   "pp": -4.24,
+   "p": 0.273602112,
+   "sig": "insig"
+  },
+  {
+   "term": "dwelling_shanty",
+   "label": "Type of house: Shanty",
+   "pp": -6.08,
+   "p": 0.140509693,
+   "sig": "insig"
+  },
+  {
+   "term": "dwelling_swahili",
+   "label": "Type of house: Swahili",
+   "pp": -5.0,
+   "p": 0.049811317,
+   "sig": "*"
+  },
+  {
+   "term": "ownership_dwelling_no_rent_with_consent_of_owner",
+   "label": "Own or rent the home: No rent, with consent of owner",
+   "pp": 0.96,
+   "p": 0.921876575,
+   "sig": "insig"
+  },
+  {
+   "term": "ownership_dwelling_owns",
+   "label": "Own or rent the home: Owns",
+   "pp": 8.16,
+   "p": 0.388273931,
+   "sig": "insig"
+  },
+  {
+   "term": "ownership_dwelling_pays_rent_lease",
+   "label": "Own or rent the home: Pays rent/lease",
+   "pp": 7.08,
+   "p": 0.455015538,
+   "sig": "insig"
+  },
+  {
+   "term": "roof_material_canvas_nylon_cartons_cardboard",
+   "label": "Roof material: Canvas/nylon/cardboard",
+   "pp": 14.71,
+   "p": 0.286895464,
+   "sig": "insig"
+  },
+  {
+   "term": "roof_material_concrete_cement",
+   "label": "Roof material: Concrete/Cement",
+   "pp": 7.24,
+   "p": 0.551227163,
+   "sig": "insig"
+  },
+  {
+   "term": "roof_material_dung__mud",
+   "label": "Roof material: Dung/mud",
+   "pp": -2.48,
+   "p": 0.849928142,
+   "sig": "insig"
+  },
+  {
+   "term": "roof_material_grass__makuti_thatch_twigs",
+   "label": "Roof material: Grass/makuti thatch",
+   "pp": 6.82,
+   "p": 0.572793875,
+   "sig": "insig"
+  },
+  {
+   "term": "roof_material_iron_sheets_decra_versatile",
+   "label": "Roof material: Iron sheets",
+   "pp": 4.1,
+   "p": 0.723075473,
+   "sig": "insig"
+  },
+  {
+   "term": "roof_material_tiles",
+   "label": "Roof material: Tiles",
+   "pp": 6.94,
+   "p": 0.669896825,
+   "sig": "insig"
+  },
+  {
+   "term": "roof_material_tin_cans",
+   "label": "Roof material: Tin cans",
+   "pp": 34.6,
+   "p": 0.308979641,
+   "sig": "insig"
+  },
+  {
+   "term": "wall_material_bricks",
+   "label": "Wall material: Bricks",
+   "pp": 7.1,
+   "p": 0.06618901,
+   "sig": "insig"
+  },
+  {
+   "term": "wall_material_cane_palm_trunks",
+   "label": "Wall material: Cane/palm/trunks",
+   "pp": 2.34,
+   "p": 0.716554472,
+   "sig": "insig"
+  },
+  {
+   "term": "wall_material_cement_blocks",
+   "label": "Wall material: Cement blocks",
+   "pp": 17.09,
+   "p": 0.006917218,
+   "sig": "**"
+  },
+  {
+   "term": "wall_material_concrete_cement",
+   "label": "Wall material: Concrete/Cement",
+   "pp": 10.9,
+   "p": 0.003469447,
+   "sig": "**"
+  },
+  {
+   "term": "wall_material_covered_adobe",
+   "label": "Wall material: Covered adobe",
+   "pp": 10.56,
+   "p": 0.055856395,
+   "sig": "insig"
+  },
+  {
+   "term": "wall_material_grass_reeds",
+   "label": "Wall material: Grass/reeds",
+   "pp": -10.18,
+   "p": 0.10590492,
+   "sig": "insig"
+  },
+  {
+   "term": "wall_material_iron_sheets",
+   "label": "Wall material: Iron sheets",
+   "pp": 8.0,
+   "p": 0.059386454,
+   "sig": "insig"
+  },
+  {
+   "term": "wall_material_mud_cow_dung",
+   "label": "Wall material: Mud/cow dung",
+   "pp": 5.43,
+   "p": 0.112380324,
+   "sig": "insig"
+  },
+  {
+   "term": "wall_material_no_walls",
+   "label": "Wall material: No walls",
+   "pp": -9.12,
+   "p": 0.307617617,
+   "sig": "insig"
+  },
+  {
+   "term": "wall_material_other",
+   "label": "Wall material: Other",
+   "pp": 11.15,
+   "p": 0.72693841,
+   "sig": "insig"
+  },
+  {
+   "term": "wall_material_plywood_cardboard",
+   "label": "Wall material: Plywood/Cardboard",
+   "pp": -9.47,
+   "p": 0.36417062,
+   "sig": "insig"
+  },
+  {
+   "term": "wall_material_precast_wall",
+   "label": "Wall material: Precast wall",
+   "pp": 30.72,
+   "p": 0.005834909,
+   "sig": "**"
+  },
+  {
+   "term": "wall_material_reused_wood",
+   "label": "Wall material: Reused wood",
+   "pp": 9.99,
+   "p": 0.437030347,
+   "sig": "insig"
+  },
+  {
+   "term": "wall_material_stone_with_lime_cement",
+   "label": "Wall material: Stone with lime/cement",
+   "pp": 13.31,
+   "p": 0.000519489,
+   "sig": "***"
+  },
+  {
+   "term": "wall_material_stone_with_mud",
+   "label": "Wall material: Stone with mud",
+   "pp": 0.61,
+   "p": 0.916356256,
+   "sig": "insig"
+  },
+  {
+   "term": "wall_material_uncovered_adobe",
+   "label": "Wall material: Uncovered adobe",
+   "pp": 9.38,
+   "p": 0.152397454,
+   "sig": "insig"
+  },
+  {
+   "term": "wall_material_wood_planks_shingles_timber",
+   "label": "Wall material: Wood planks/shingles/timber",
+   "pp": 12.7,
+   "p": 0.001240456,
+   "sig": "**"
+  },
+  {
+   "term": "floor_material_concrete_cement_terrazo",
+   "label": "Floor material: Concrete/cement/terrazzo",
+   "pp": -2.45,
+   "p": 0.318176205,
+   "sig": "insig"
+  },
+  {
+   "term": "floor_material_dung",
+   "label": "Floor material: Dung",
+   "pp": -5.5,
+   "p": 0.106901303,
+   "sig": "insig"
+  },
+  {
+   "term": "floor_material_earth_sand",
+   "label": "Floor material: Earth/sand",
+   "pp": -8.45,
+   "p": 0.006116935,
+   "sig": "**"
+  },
+  {
+   "term": "floor_material_palm_bamboo",
+   "label": "Floor material: Palm/bamboo",
+   "pp": -34.66,
+   "p": 0.276859311,
+   "sig": "insig"
+  },
+  {
+   "term": "floor_material_parquet_or_polished_wood",
+   "label": "Floor material: Parquet or polished wood",
+   "pp": 38.4,
+   "p": 0.046840983,
+   "sig": "*"
+  },
+  {
+   "term": "floor_material_vinyl_or_asphalt_strips",
+   "label": "Floor material: Vinyl or asphalt strips",
+   "pp": 72.03,
+   "p": 0.001412424,
+   "sig": "**"
+  },
+  {
+   "term": "floor_material_wall_to_wall_carpet",
+   "label": "Floor material: Wall-to-wall carpet",
+   "pp": -2.24,
+   "p": 0.711748716,
+   "sig": "insig"
+  },
+  {
+   "term": "floor_material_wood_planks_shingles_timber",
+   "label": "Floor material: Wood planks/shingles/timber",
+   "pp": -10.19,
+   "p": 0.482997165,
+   "sig": "insig"
+  },
+  {
+   "term": "drinking_water_source_bottled_water",
+   "label": "Drinking water source: Bottled water",
+   "pp": 2.02,
+   "p": 0.80451841,
+   "sig": "insig"
+  },
+  {
+   "term": "drinking_water_source_dam",
+   "label": "Drinking water source: Dam",
+   "pp": -5.1,
+   "p": 0.259096486,
+   "sig": "insig"
+  },
+  {
+   "term": "drinking_water_source_lake",
+   "label": "Drinking water source: Lake",
+   "pp": -2.36,
+   "p": 0.710049677,
+   "sig": "insig"
+  },
+  {
+   "term": "drinking_water_source_piped_to_yard_plot",
+   "label": "Drinking water source: Piped to yard/plot",
+   "pp": 1.47,
+   "p": 0.524618908,
+   "sig": "insig"
+  },
+  {
+   "term": "drinking_water_source_piped_into_dwelling",
+   "label": "Drinking water source: Piped into dwelling",
+   "pp": 5.68,
+   "p": 0.063149201,
+   "sig": "insig"
+  },
+  {
+   "term": "drinking_water_source_pond",
+   "label": "Drinking water source: Pond",
+   "pp": -12.45,
+   "p": 0.067969488,
+   "sig": "insig"
+  },
+  {
+   "term": "drinking_water_source_protected_spring",
+   "label": "Drinking water source: Protected Spring",
+   "pp": -2.58,
+   "p": 0.394853096,
+   "sig": "insig"
+  },
+  {
+   "term": "drinking_water_source_protected_well",
+   "label": "Drinking water source: Protected Well",
+   "pp": -4.13,
+   "p": 0.137519464,
+   "sig": "insig"
+  },
+  {
+   "term": "drinking_water_source_public_tap_standpipe",
+   "label": "Drinking water source: Public tap/Standpipe",
+   "pp": 1.4,
+   "p": 0.608142211,
+   "sig": "insig"
+  },
+  {
+   "term": "drinking_water_source_rain_harvested_water",
+   "label": "Drinking water source: Rain/Harvested water",
+   "pp": 1.21,
+   "p": 0.68924682,
+   "sig": "insig"
+  },
+  {
+   "term": "drinking_water_source_stream_river",
+   "label": "Drinking water source: Stream/river",
+   "pp": 1.07,
+   "p": 0.62739223,
+   "sig": "insig"
+  },
+  {
+   "term": "drinking_water_source_unprotected_spring",
+   "label": "Drinking water source: Unprotected Spring",
+   "pp": -10.63,
+   "p": 0.006892716,
+   "sig": "**"
+  },
+  {
+   "term": "drinking_water_source_unprotected_well",
+   "label": "Drinking water source: Unprotected Well",
+   "pp": -6.85,
+   "p": 0.046606812,
+   "sig": "*"
+  },
+  {
+   "term": "drinking_water_source_water_vendor",
+   "label": "Drinking water source: Water Vendor",
+   "pp": -0.49,
+   "p": 0.865923098,
+   "sig": "insig"
+  },
+  {
+   "term": "toilet_facility_flush_to_bio_septic_tank",
+   "label": "Toilet: Flush to Bio-septic tank",
+   "pp": -0.11,
+   "p": 0.995503166,
+   "sig": "insig"
+  },
+  {
+   "term": "toilet_facility_flush_to_cess_pool",
+   "label": "Toilet: Flush to Cess pool",
+   "pp": 13.57,
+   "p": 0.375932234,
+   "sig": "insig"
+  },
+  {
+   "term": "toilet_facility_flush_to_main_sewer",
+   "label": "Toilet: Flush to Main Sewer",
+   "pp": 1.57,
+   "p": 0.894869345,
+   "sig": "insig"
+  },
+  {
+   "term": "toilet_facility_flush_to_septic_tank",
+   "label": "Toilet: Flush to Septic tank",
+   "pp": 3.89,
+   "p": 0.735527698,
+   "sig": "insig"
+  },
+  {
+   "term": "toilet_facility_open",
+   "label": "Toilet: No toilet (open defecation)",
+   "pp": -4.85,
+   "p": 0.670747474,
+   "sig": "insig"
+  },
+  {
+   "term": "toilet_facility_pit_latrine_uncovered",
+   "label": "Toilet: Pit latrine (uncovered)",
+   "pp": -0.53,
+   "p": 0.963114563,
+   "sig": "insig"
+  },
+  {
+   "term": "toilet_facility_pit_latrine_covered",
+   "label": "Toilet: Pit latrine (covered)",
+   "pp": 3.67,
+   "p": 0.745757267,
+   "sig": "insig"
+  },
+  {
+   "term": "toilet_facility_vip_pit_latrin",
+   "label": "Toilet: VIP pit latrine",
+   "pp": 4.44,
+   "p": 0.697835515,
+   "sig": "insig"
+  },
+  {
+   "term": "cooking_fuel_source_charcoal",
+   "label": "Cooking fuel: Charcoal",
+   "pp": 2.96,
+   "p": 0.797504338,
+   "sig": "insig"
+  },
+  {
+   "term": "cooking_fuel_source_electricity",
+   "label": "Cooking fuel: Electricity",
+   "pp": 8.14,
+   "p": 0.561390198,
+   "sig": "insig"
+  },
+  {
+   "term": "cooking_fuel_source_firewood_and_products_of_wood",
+   "label": "Cooking fuel: Firewood and products of wood",
+   "pp": -1.8,
+   "p": 0.875478973,
+   "sig": "insig"
+  },
+  {
+   "term": "cooking_fuel_source_lpg_gas",
+   "label": "Cooking fuel: LPG (gas)",
+   "pp": 5.85,
+   "p": 0.610781478,
+   "sig": "insig"
+  },
+  {
+   "term": "cooking_fuel_source_other_specify",
+   "label": "Cooking fuel: Other",
+   "pp": 14.61,
+   "p": 0.38209796,
+   "sig": "insig"
+  },
+  {
+   "term": "cooking_fuel_source_paraffin",
+   "label": "Cooking fuel: Paraffin",
+   "pp": 0.59,
+   "p": 0.960941951,
+   "sig": "insig"
+  },
+  {
+   "term": "cooking_fuel_source_solar",
+   "label": "Cooking fuel: Solar",
+   "pp": -23.11,
+   "p": 0.185008992,
+   "sig": "insig"
+  },
+  {
+   "term": "lighting_source_candle",
+   "label": "Lighting: Candle",
+   "pp": -14.19,
+   "p": 0.230800883,
+   "sig": "insig"
+  },
+  {
+   "term": "lighting_source_electricity",
+   "label": "Lighting: Electricity",
+   "pp": -10.71,
+   "p": 0.37922007,
+   "sig": "insig"
+  },
+  {
+   "term": "lighting_source_fuel_wood",
+   "label": "Lighting: Fuel wood",
+   "pp": -24.89,
+   "p": 0.03002569,
+   "sig": "*"
+  },
+  {
+   "term": "lighting_source_gas_lamp",
+   "label": "Lighting: Gas Lamp",
+   "pp": -19.54,
+   "p": 0.436559006,
+   "sig": "insig"
+  },
+  {
+   "term": "lighting_source_paraffin_lantern",
+   "label": "Lighting: Paraffin Lantern",
+   "pp": -6.22,
+   "p": 0.553461422,
+   "sig": "insig"
+  },
+  {
+   "term": "lighting_source_paraffin_pressure_lamp",
+   "label": "Lighting: Paraffin Pressure lamp",
+   "pp": -25.0,
+   "p": 0.112715766,
+   "sig": "insig"
+  },
+  {
+   "term": "lighting_source_paraffin_tin_lamp",
+   "label": "Lighting: Paraffin Tin lamp",
+   "pp": -12.11,
+   "p": 0.240693654,
+   "sig": "insig"
+  },
+  {
+   "term": "lighting_source_solar",
+   "label": "Lighting: Solar",
+   "pp": -4.31,
+   "p": 0.670781031,
+   "sig": "insig"
+  },
+  {
+   "term": "lighting_source_torch_spot_light_dry_cells",
+   "label": "Lighting: Torch/Spot light-Dry cells",
+   "pp": -12.27,
+   "p": 0.246153047,
+   "sig": "insig"
+  },
+  {
+   "term": "lighting_source_torch_spotlight_solar_charged",
+   "label": "Lighting: Torch/Spotlight-Solar Charged",
+   "pp": -9.21,
+   "p": 0.36869806,
+   "sig": "insig"
+  },
+  {
+   "term": "access_electricity_yes",
+   "label": "Has electricity",
+   "pp": 7.62,
+   "p": 0.262037477,
+   "sig": "insig"
+  },
+  {
+   "term": "own_radio_yes",
+   "label": "Radio",
+   "pp": 7.11,
+   "p": 2.58e-08,
+   "sig": "***"
+  },
+  {
+   "term": "owns_tv_yes",
+   "label": "TV",
+   "pp": 3.59,
+   "p": 0.01692279,
+   "sig": "*"
+  },
+  {
+   "term": "own_desktop_yes",
+   "label": "Desktop computer",
+   "pp": -8.11,
+   "p": 0.351706871,
+   "sig": "insig"
+  },
+  {
+   "term": "own_laptop_yes",
+   "label": "Laptop",
+   "pp": 1.62,
+   "p": 0.652524991,
+   "sig": "insig"
+  },
+  {
+   "term": "own_tablet_yes",
+   "label": "Tablet",
+   "pp": -0.18,
+   "p": 0.983064016,
+   "sig": "insig"
+  },
+  {
+   "term": "own_fridge_yes",
+   "label": "Fridge",
+   "pp": 2.73,
+   "p": 0.403753932,
+   "sig": "insig"
+  },
+  {
+   "term": "own_hometheatre_yes",
+   "label": "Home theatre",
+   "pp": 9.07,
+   "p": 0.069464983,
+   "sig": "insig"
+  },
+  {
+   "term": "own_phone_yes",
+   "label": "Mobile phone",
+   "pp": 8.99,
+   "p": 2.09e-06,
+   "sig": "***"
+  },
+  {
+   "term": "own_mtcycle_yes",
+   "label": "Motorcycle",
+   "pp": -3.35,
+   "p": 0.167475669,
+   "sig": "insig"
+  },
+  {
+   "term": "own_bicycle_yes",
+   "label": "Bicycle",
+   "pp": 2.07,
+   "p": 0.42604212,
+   "sig": "insig"
+  },
+  {
+   "term": "own_car_yes",
+   "label": "Car",
+   "pp": 2.91,
+   "p": 0.44500062,
+   "sig": "insig"
+  },
+  {
+   "term": "owns_pickup_yes",
+   "label": "Pickup truck",
+   "pp": -4.84,
+   "p": 0.640101212,
+   "sig": "insig"
+  },
+  {
+   "term": "d1_wage_yes",
+   "label": "Head is a paid employee",
+   "pp": -0.44,
+   "p": 0.879343374,
+   "sig": "insig"
+  },
+  {
+   "term": "d1_own_account_yes",
+   "label": "Head works for themself",
+   "pp": 2.06,
+   "p": 0.236571858,
+   "sig": "insig"
+  },
+  {
+   "term": "d1_own_frm_yes",
+   "label": "Head farms own land",
+   "pp": 1.69,
+   "p": 0.490452716,
+   "sig": "insig"
+  },
+  {
+   "term": "occupation_business_lady_man",
+   "label": "occupation_business_lady_man",
+   "pp": -3.25,
+   "p": 0.16435449,
+   "sig": "insig"
+  },
+  {
+   "term": "occupation_casual_labour",
+   "label": "Occupation of head: Casual labour",
+   "pp": -1.54,
+   "p": 0.684344652,
+   "sig": "insig"
+  },
+  {
+   "term": "occupation_farmer",
+   "label": "Occupation of head: Farmer",
+   "pp": -5.23,
+   "p": 0.049618442,
+   "sig": "*"
+  },
+  {
+   "term": "occupation_housekeeper",
+   "label": "Occupation of head: Housekeeper",
+   "pp": -4.65,
+   "p": 0.381036391,
+   "sig": "insig"
+  },
+  {
+   "term": "occupation_housewife",
+   "label": "Occupation of head: Housewife",
+   "pp": -6.64,
+   "p": 0.062674005,
+   "sig": "insig"
+  },
+  {
+   "term": "occupation_private_sector_worker",
+   "label": "Occupation of head: Private sector worker",
+   "pp": 0.72,
+   "p": 0.848118989,
+   "sig": "insig"
+  },
+  {
+   "term": "occupation_public_sector_worker",
+   "label": "Occupation of head: Public sector worker",
+   "pp": -3.67,
+   "p": 0.316108749,
+   "sig": "insig"
+  },
+  {
+   "term": "actual_consumption_log",
+   "label": "actual_consumption_log",
+   "pp": -43.33,
+   "p": 1.25e-177,
+   "sig": "***"
+  }
+ ],
+ "adult_equivalent_weights": {
+  "0-4": 0.24,
+  "5-14": 0.65,
+  "15+": 1.0
+ },
+ "inflation_factor": 1.211,
+ "price_year": 2024,
+ "deflator_median": {
+  "Urban": 1.0130727,
+  "Rural": 1.0069666
+ },
+ "n_households": 16963,
+ "n_test": 3394
+}

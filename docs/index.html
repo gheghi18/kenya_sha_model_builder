@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PMT Explorer</title>
+  <meta name="description" content="Test Kenya's AI means-testing model yourself: no coding needed.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css?v=43">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#start">PMT Explorer</a>
+      
+    </div>
+    <nav class="steps" aria-label="Sections">
+      <div class="wrap steps-inner">
+        <a href="#start" data-tab="start">Start</a>
+        <a href="#build" data-tab="build"><span>1</span> Build your model</a>
+        <a href="#household" data-tab="household"><span>2</span> Meet a household</a>
+        <a href="#accuracy" data-tab="accuracy"><span>3</span> How accurate is it?</a>
+        <a href="#excluded" data-tab="excluded"><span>4</span> Who pays too much?</a>
+        <a href="#fairness" data-tab="fairness"><span>5</span> Is it fair?</a>
+        <a href="#drivers" data-tab="drivers"><span>6</span> What causes mistakes?</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <p>Loading 16,963 survey households&hellip;</p>
+    </div>
+    <div id="load-error" class="callout warn" hidden></div>
+    <div id="need-model" class="callout need" hidden><strong>First, build your model.</strong> Pick at least one question. <a class="btn primary small" href="#build">Build your model →</a></div>
+    <div id="model-pill" class="model-pill" hidden></div>
+
+    <!-- START -->
+    <section id="tab-start" class="tab" hidden>
+      <div class="hero">
+        <h1>Build the computer that sets Kenya's health insurance bills</h1>
+        <p class="lede">Kenya's health authority (SHA) doesn't know most people's income. So a computer model <em>guesses</em> it from a few questions about their home, family and belongings. Each household then pays <strong>2.75% of the guess</strong> every month.</p>
+        <p class="lede">Your job: build that model yourself.</p>
+      </div>
+      <ol class="intro-steps">
+        <li><span class="n">1</span><div><strong>Pick up to 15 questions</strong><p>Roof, toilet, TV, county… which ones reveal income?</p></div></li>
+        <li><span class="n">2</span><div><strong>The model learns</strong><p>From 13,569 real Kenyan households in a 2021 national survey.</p></div></li>
+        <li><span class="n">3</span><div><strong>See who it charges</strong><p>We test it on 3,394 other households and compare with their real income.</p></div></li>
+      </ol>
+      <p><a class="btn primary big" href="#build">Start building →</a></p>
+      <p class="small muted">You'll compare your model with a rebuild of SHA's real one.</p>
+    </section>
+
+    <!-- 1. BUILD -->
+    <section id="tab-build" class="tab" hidden>
+      <div class="tab-head">
+        <span class="kicker">Step 1</span>
+        <h1>Build your model</h1>
+        <p class="lede">Drag up to 15 questions into your model, or tap them. It learns instantly.</p>
+      </div>
+      <div class="builder">
+        <div class="panel palette" id="palette" aria-label="Questions you can use"></div>
+        <div class="builder-side">
+          <div class="panel model-box sticky-build">
+            <div class="model-head"><h3>Your model</h3><span class="count" id="model-count">0 / 15</span><button type="button" class="linkbtn" id="model-clear">Clear</button></div>
+            <div class="dropzone" id="dropzone"></div>
+            <div id="score"></div>
+            <a class="btn primary" id="build-next" href="#household">See what it does →</a>
+          </div>
+          <details class="drawer panel" id="learned"><summary>What your model learned</summary><div id="learned-body"></div></details>
+        </div>
+      </div>
+      <button type="button" class="mini-bar" id="build-mini" aria-label="Jump to your model"></button>
+    </section>
+
+    <!-- 2. HOUSEHOLD -->
+    <section id="tab-household" class="tab" hidden>
+      <div class="tab-head">
+        <span class="kicker">Step 2</span>
+        <h1>Meet a household</h1>
+        <p class="lede">Your model only asks the questions you picked. Change the answers and watch the monthly bill.</p>
+      </div>
+      <div class="two-col">
+        <form id="hh-form" class="panel form" autocomplete="off"></form>
+        <div class="panel sticky" id="hh-result"></div>
+        <button type="button" class="mini-bar" id="hh-mini" aria-label="Jump to the result"></button>
+      </div>
+    </section>
+
+    <!-- 3. ACCURACY -->
+    <section id="tab-accuracy" class="tab" hidden>
+      <div class="tab-head">
+        <span class="kicker">Step 3</span>
+        <h1>How accurate is it?</h1>
+        <p class="lede">Does your model guess income right? Each dot is a real household.</p>
+      </div>
+      <div class="controls" id="acc-controls"></div>
+      <div class="stat-row" id="acc-stats"></div>
+      <div class="panel"><h3>Your model's guess vs. real income</h3><div id="acc-scatter" class="chart tall"></div><p class="chart-note"><span class="sw over"></span>Guessed too high <span class="sw ok"></span>About right <span class="sw under"></span>Guessed too low</p></div>
+      <div class="panel"><h3>Poorest to richest: how often is it right?</h3><div id="acc-deciles" class="chart"></div><p class="chart-note">"About right" = within 20%.</p></div>
+      <div class="explain" id="acc-explain"></div>
+      <details class="drawer panel"><summary>More: the model squeezes everyone to the middle</summary><div id="acc-density" class="chart"></div></details>
+    </section>
+
+    <!-- 4. EXCLUDED -->
+    <section id="tab-excluded" class="tab" hidden>
+      <div class="tab-head">
+        <span class="kicker">Step 4</span>
+        <h1>Who pays too much?</h1>
+        <p class="lede">How many households does your model overcharge?</p>
+      </div>
+      <div class="controls" id="exc-controls"></div>
+      <div class="panel"><h3 id="exc-dots-title">100 poor households</h3><div id="exc-dots" class="dots"></div><div class="legend"><span><i class="dot miss"></i>Pays too much</span><span><i class="dot ok"></i>Pays about right or less</span></div></div>
+      <div class="explain" id="exc-explain"></div>
+      <details class="drawer panel"><summary>More: the published poverty-line figure</summary>
+        <div id="exc-matrix" style="margin-top:12px"></div>
+      </details>
+    </section>
+
+    <!-- 5. FAIRNESS -->
+    <section id="tab-fairness" class="tab" hidden>
+      <div class="tab-head">
+        <span class="kicker">Step 5</span>
+        <h1>Is it fair?</h1>
+        <p class="lede">Are some groups overcharged more than others with the same income?</p>
+      </div>
+      <div class="mission" id="fair-missions"></div>
+      <div class="controls" id="fair-controls"></div>
+      <div class="explain" id="fair-explain"></div>
+      <div class="panel"><h3 id="fair-title"></h3><div id="fair-chart" class="chart"></div><p class="chart-note"><span class="sw over"></span>Above average <span class="sw grey"></span>Below average. Dashed line = average.</p></div>
+      <details class="drawer panel"><summary>More: the numbers and the poverty-line measure</summary><div id="fair-table" class="table-wrap"></div><p class="chart-note">"Could be chance?" uses Fisher's exact test against everyone else.</p></details>
+    </section>
+
+    <!-- 6. DRIVERS -->
+    <section id="tab-drivers" class="tab" hidden>
+      <div class="tab-head">
+        <span class="kicker">Step 6</span>
+        <h1>What causes mistakes?</h1>
+        <p class="lede">What makes a household more likely to pay too much?</p>
+      </div>
+      <div class="controls" id="drv-controls"></div>
+      <div class="explain" id="drv-explain"></div>
+      <div class="panel"><h3>Red = more likely to pay too much. Blue = less.</h3><div id="drv-chart" class="chart tall"></div><details class="drawer"><summary>How is this worked out?</summary><p class="chart-note">A linear regression on the chosen test households: "pays too much" (income guessed over 20% too high) against household characteristics, controlling for real income. The published methodology ran the same regression for "poor but called not poor". Only results with p &lt; 0.05 and at least 30 households are shown unless you tick "show all". Categories are compared with a reference, e.g. Baringo for counties.</p></details></div>
+    </section>
+
+
+  </main>
+
+  <footer class="site-footer"><div class="wrap">Lighthouse Reports. Everything runs in your browser.</div></footer>
+
+  <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/plotly.js-basic-dist-min@2.35.2/plotly-basic.min.js"></script>
+  <script src="assets/stats.js?v=43"></script>
+  <script src="assets/app.js?v=43"></script>
+</body>
+</html>
